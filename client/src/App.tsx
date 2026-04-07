@@ -9,9 +9,28 @@ import { UsPatientsPage } from './pages/UsPatientsPage';
 import { RootCanalPage } from './pages/RootCanalPage';
 import { useEffect } from 'react';
 import ScrollToTop from './components/ScrollToTop';
+import Lenis from 'lenis';
 
 function AppLayout() {
   const location = useLocation();
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      smoothWheel: true,
+      lerp: 0.08,
+    });
+
+    const raf = (time: number) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   useEffect(() => {
     const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;

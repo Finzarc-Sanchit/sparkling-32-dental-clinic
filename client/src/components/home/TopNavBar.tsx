@@ -30,6 +30,12 @@ export function TopNavBar() {
 
   const activeHref = useMemo(() => `${location.pathname}${location.hash}`, [location.hash, location.pathname]);
 
+  function scrollToTopOnNavigate(href: string) {
+    // If this is a hash navigation on the same page, keep the current scroll behavior.
+    if (href.startsWith('/#')) return;
+    window.scrollTo(0, 0);
+  }
+
   useEffect(() => {
     // Close the mobile menu after navigation.
     setMobileOpen(false);
@@ -87,6 +93,7 @@ export function TopNavBar() {
                   key={l.href}
                   to={l.href}
                   role="menuitem"
+                  onClick={() => scrollToTopOnNavigate(l.href)}
                   className="block px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-teal-800 transition-colors"
                 >
                   {l.label}
@@ -99,6 +106,7 @@ export function TopNavBar() {
             <NavLink
               key={l.href}
               to={l.href}
+              onClick={() => scrollToTopOnNavigate(l.href)}
               className={({ isActive }) => {
                 // react-router's `isActive` won't consider hash-only matches,
                 // so we treat "/#..." as active only when we're on "/" and the hash matches.
@@ -150,6 +158,7 @@ export function TopNavBar() {
               <NavLink
                 key={l.href}
                 to={l.href}
+                onClick={() => scrollToTopOnNavigate(l.href)}
                 className={({ isActive }) => {
                   const isHomeHash =
                     l.href.startsWith('/#') && location.pathname === '/' && location.hash === l.href.slice(1);
@@ -169,6 +178,7 @@ export function TopNavBar() {
               <NavLink
                 key={l.href}
                 to={l.href}
+                onClick={() => scrollToTopOnNavigate(l.href)}
                 className={({ isActive }) => {
                   const isHomeHash =
                     l.href.startsWith('/#') && location.pathname === '/' && location.hash === l.href.slice(1);
