@@ -5,17 +5,32 @@ import { RctFocusSection } from '../components/rct/RctProcedureSection.tsx';
 import { RctSymptomsSection } from '../components/rct/RctSymptomsSection.tsx';
 import { RctWhatIsSection } from '../components/rct/RctWhatIsSection.tsx';
 import { RctWhyChooseSection } from '../components/rct/RctWhyChooseSection.tsx';
+import { Reveal } from '../components/ui/Reveal';
 
 export function RootCanalPage() {
   return (
     <main className="relative">
-      <RctHeroSection />
-      <RctWhatIsSection />
-      <RctSymptomsSection />
-      <RctFocusSection />
-      <RctPricingSection />
-      <RctWhyChooseSection />
-      <RctFaqSection />
+      <Reveal>
+        <RctHeroSection />
+      </Reveal>
+      <Reveal delay={0.05}>
+        <RctWhatIsSection />
+      </Reveal>
+      <Reveal delay={0.05}>
+        <RctSymptomsSection />
+      </Reveal>
+      <Reveal delay={0.05}>
+        <RctFocusSection />
+      </Reveal>
+      <Reveal delay={0.05}>
+        <RctPricingSection />
+      </Reveal>
+      <Reveal delay={0.05}>
+        <RctWhyChooseSection />
+      </Reveal>
+      <Reveal delay={0.05}>
+        <RctFaqSection />
+      </Reveal>
     </main>
   );
 }
