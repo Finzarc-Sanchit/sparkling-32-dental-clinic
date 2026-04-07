@@ -1,15 +1,15 @@
-import { Container } from '../ui/Container'
-import { MaterialIcon } from '../ui/MaterialIcon'
-import { buildWhatsAppLink } from '../../utils/whatsapp'
+import { Container } from '../ui/Container';
+import { MaterialIcon } from '../ui/MaterialIcon';
+import { buildWhatsAppLink } from '../../utils/whatsapp';
 
 export function NriCtaSection() {
-  const whatsappLink = buildWhatsAppLink()
+  const whatsappLink = buildWhatsAppLink();
 
   return (
     <section className="bg-tertiary text-on-tertiary py-20">
       <Container className="max-w-4xl text-center">
         <h2 className="text-3xl lg:text-5xl font-extrabold mb-6 leading-tight">Get Your Treatment Plan Before You Travel</h2>
-        <p className="text-xl opacity-90 mb-10">
+        <p className="text-xl opacity-90 mb-10 text-white">
           Save time and money with a pre-planned dental itinerary. Our concierge team is ready to help.
         </p>
         <a
@@ -21,6 +21,6 @@ export function NriCtaSection() {
         </a>
       </Container>
     </section>
-  )
+  );
 }
 

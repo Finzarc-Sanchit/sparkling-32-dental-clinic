@@ -32,17 +32,17 @@ export function AboutPhilosophySection() {
           <IconCard
             icon="volunteer_activism"
             title="Patient comfort"
-            description=""
+            description="A calm, reassuring experience with personalized attention and minimal waiting time."
           />
           <IconCard
             icon="biotech"
             title="Clinical precision"
-            description=""
+            description="Accurate diagnosis and high-quality treatment using modern techniques in a well-equipped setting."
           />
           <IconCard
             icon="verified_user"
             title="Ethical and transparent treatment"
-            description=""
+            description="Clear communication, honest guidance, and upfront treatment plans—no hidden surprises."
           />
         </div>
       </Container>

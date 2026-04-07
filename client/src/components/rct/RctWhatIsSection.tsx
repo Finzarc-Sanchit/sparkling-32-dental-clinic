@@ -1,4 +1,4 @@
-import { Container } from '../ui/Container'
+import { Container } from '../ui/Container';
 
 export function RctWhatIsSection() {
   return (
@@ -15,26 +15,16 @@ export function RctWhatIsSection() {
         <div className="order-1 lg:order-2">
           <h2 className="text-4xl font-bold text-on-surface mb-8">What Is Root Canal Treatment?</h2>
           <div className="space-y-6 text-lg text-on-surface-variant">
-            <p>
-              Root canal treatment helps save infected teeth and eliminate pain effectively.
-            </p>
-
-            <div>
-              <div className="font-bold text-on-surface mb-3">At Sparkling 32 Dental Clinic, we focus on:</div>
-              <ul className="space-y-2">
-                <li>Comfortable and painless procedures</li>
-                <li>Use of advanced techniques</li>
-                <li>Proper diagnosis and long-term results</li>
-              </ul>
-            </div>
+            <p>Root canal treatment is a specialized procedure used to repair and save a tooth that is badly decayed or becomes infected. During the procedure, the nerve and pulp are removed and the inside of the tooth is cleaned and sealed.</p>
+            <p>Without treatment, the tissue surrounding the tooth will become infected and abscesses may form. Modern technology ensures that the experience is nearly identical to getting a standard filling.</p>
 
             <div className="bg-primary text-on-primary-container p-6 rounded-2xl shadow-lg mt-8">
-              <p className="font-bold text-xl leading-snug">"Root canal treatment does not cause pain — it relieves it."</p>
+              <p className="font-bold text-xl leading-snug text-white">"Root canal treatment does not cause pain — it relieves it."</p>
             </div>
           </div>
         </div>
       </Container>
     </section>
-  )
+  );
 }
 

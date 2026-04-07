@@ -7,23 +7,23 @@ type Card = { icon: string; title: string; description: string }
 const CARDS: readonly Card[] = [
   {
     icon: 'payments',
-    title: 'Exceptional Value',
-    description: 'Save up to 60-80% compared to US or UK dental costs without compromising quality.',
+    title: 'High-quality dental treatments at affordable costs',
+    description: '',
   },
   {
     icon: 'verified',
-    title: 'Advanced Standards',
-    description: 'Digital X-rays, US-standard sterilization, and FDA-approved global dental brands.',
+    title: 'Advanced equipment and hygiene standards',
+    description: '',
   },
   {
     icon: 'schedule',
-    title: 'Efficient Scheduling',
-    description: 'Priority appointments designed around your limited travel duration for quick completion.',
+    title: 'Efficient scheduling with minimal waiting time',
+    description: '',
   },
   {
     icon: 'forum',
-    title: 'English-Speaking Team',
-    description: 'Clear communication and digital documentation for seamless records transfer back home.',
+    title: 'Comfortable experience for international patients',
+    description: '',
   },
 ] as const
 
@@ -34,7 +34,7 @@ function WhyCard({ icon, title, description }: Card) {
         <MaterialIcon name={icon} className="text-3xl text-primary" />
       </div>
       <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-on-surface-variant">{description}</p>
+      {description ? <p className="text-on-surface-variant">{description}</p> : null}
     </div>
   )
 }
@@ -43,7 +43,7 @@ export function NriWhyChooseSection() {
   return (
     <section className="py-24 bg-surface">
       <Container>
-        <NriSectionHeading title="Why NRI Patients Choose Sparkling 32" />
+        <NriSectionHeading title="Why NRIs Choose Us" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {CARDS.map((c) => (
             <WhyCard key={c.title} {...c} />

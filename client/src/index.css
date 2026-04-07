@@ -112,9 +112,87 @@
     @apply underline-offset-4;
   }
 
+  a,
+  button,
+  [role="button"] {
+    transition:
+      color 180ms ease,
+      background-color 180ms ease,
+      border-color 180ms ease,
+      box-shadow 180ms ease,
+      opacity 180ms ease,
+      transform 180ms ease;
+  }
+
+  input,
+  textarea,
+  select {
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease,
+      background-color 180ms ease,
+      color 180ms ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    /* Button-like interactions (covers <button> and <a> CTAs). */
+    button:hover,
+    [role="button"]:hover,
+    a:not(nav a):is([class*="bg-"], [class*="border-"], [class*="shadow"]):hover {
+      transform: scale(1.02);
+      box-shadow: 0 14px 28px -18px rgba(0, 0, 0, 0.45);
+      will-change: transform, box-shadow;
+    }
+
+    button:active,
+    [role="button"]:active,
+    a:not(nav a):is([class*="bg-"], [class*="border-"], [class*="shadow"]):active {
+      transform: scale(0.99);
+      box-shadow: none;
+    }
+
+    /* Linked media gets a gentle zoom to feel responsive. */
+    a:hover img,
+    a:hover video {
+      transform: scale(1.02);
+    }
+
+    img,
+    video {
+      transition: transform 260ms ease;
+      transform-origin: center;
+    }
+
+    /* Tables feel more interactive on hover (safe, subtle). */
+    tbody tr {
+      transition: background-color 180ms ease;
+    }
+    tbody tr:hover {
+      background-color: color-mix(in oklab, var(--color-primary) 6%, transparent);
+    }
+  }
+
   :focus-visible {
     outline: 2px solid color-mix(in oklab, var(--color-primary) 70%, white);
     outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
@@ -123,6 +201,20 @@
     font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
     display: inline-block;
     vertical-align: middle;
+  }
+
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 520ms ease,
+      transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal-on-scroll.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .no-scrollbar::-webkit-scrollbar {

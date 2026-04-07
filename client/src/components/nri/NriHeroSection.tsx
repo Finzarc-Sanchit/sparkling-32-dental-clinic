@@ -6,10 +6,10 @@ export function NriHeroSection() {
   const whatsappLink = buildWhatsAppLink()
 
   return (
-    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-surface-container-low overflow-hidden">
+    <section className="relative pb-20 lg:pb-32 bg-surface-container-low overflow-hidden">
       <div className="absolute top-0 right-0 w-1/3 h-full opacity-10 hidden lg:block bg-[linear-gradient(135deg,_var(--color-primary)_0%,_var(--color-primary-container)_100%)] [clip-path:polygon(25%_0%,_100%_0%,_100%_100%,_0%_100%)]" />
 
-      <Container className="relative z-10 flex flex-col lg:flex-row items-center gap-16">
+      <Container className="relative z-10 mt-16 lg:mt-24 flex flex-col lg:flex-row items-center gap-16">
         <div className="flex-1 text-center lg:text-left">
           <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide uppercase bg-secondary-container text-on-secondary-fixed-variant rounded-full">
             Global Standards, Mumbai Warmth
@@ -60,7 +60,7 @@ export function NriHeroSection() {
           </div>
         </div>
 
-        <div className="flex-1 relative w-full max-w-lg lg:max-w-none">
+        <div className="flex-1 relative w-full max-w-md sm:max-w-lg lg:max-w-xl lg:ml-auto">
           <div className="rounded-xl overflow-hidden shadow-2xl transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
             <img
               alt="Clinic Interior"

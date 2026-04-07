@@ -1,9 +1,9 @@
-import { Container } from '../ui/Container'
-import { MaterialIcon } from '../ui/MaterialIcon'
-import { buildWhatsAppLink } from '../../utils/whatsapp'
+import { Container } from '../ui/Container';
+import { MaterialIcon } from '../ui/MaterialIcon';
+import { buildWhatsAppLink } from '../../utils/whatsapp';
 
 export function UsCtaSection() {
-  const whatsappLink = buildWhatsAppLink()
+  const whatsappLink = buildWhatsAppLink();
 
   return (
     <section className="py-20">
@@ -20,7 +20,7 @@ export function UsCtaSection() {
 
           <div className="relative z-10">
             <h2 className="text-4xl lg:text-5xl font-extrabold mb-8">Ready to Plan Your Treatment?</h2>
-            <p className="text-xl mb-12 opacity-90 max-w-2xl mx-auto">
+            <p className="text-xl mb-12 opacity-90 max-w-2xl mx-auto text-white">
               Get a free digital consultation and a cost comparison report within 24 hours.
             </p>
             <a
@@ -34,6 +34,6 @@ export function UsCtaSection() {
         </div>
       </Container>
     </section>
-  )
+  );
 }
 

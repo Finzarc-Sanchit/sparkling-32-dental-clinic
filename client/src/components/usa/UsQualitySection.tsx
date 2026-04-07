@@ -9,22 +9,19 @@ type Card = {
 
 const CARDS: readonly Card[] = [
   {
-    icon: 'biotech',
-    title: 'Advanced Equipment',
-    description:
-      'We utilize digital 3D CT scans, intraoral cameras, and laser technology equivalent to top-tier US clinics.',
+    icon: 'payments',
+    title: 'Transparent pricing',
+    description: 'Perfect for patients planning treatment during their India visit.',
   },
   {
-    icon: 'sanitizer',
-    title: 'Strict Hygiene Protocols',
-    description:
-      'ISO-certified sterilization procedures and single-use dental kits ensuring 100% patient safety and infection control.',
+    icon: 'person_raised_hand',
+    title: 'Personalized care',
+    description: 'Perfect for patients planning treatment during their India visit.',
   },
   {
-    icon: 'translate',
-    title: 'English-Speaking Team',
-    description:
-      'Our specialists are English-proficient, ensuring clear communication about your procedure and recovery steps.',
+    icon: 'schedule',
+    title: 'Efficient treatment timelines',
+    description: 'Perfect for patients planning treatment during their India visit.',
   },
 ] as const
 
@@ -44,7 +41,7 @@ export function UsQualitySection() {
   return (
     <section className="py-24 bg-surface">
       <Container>
-        <h2 className="text-4xl font-extrabold text-on-surface mb-16 text-center">Same Standards. Fraction of the Cost.</h2>
+        <h2 className="text-4xl font-extrabold text-on-surface mb-16 text-center">Our clinic ensures:</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {CARDS.map((c) => (
             <QualityCard key={c.title} {...c} />

@@ -1,5 +1,5 @@
-import { Container } from '../ui/Container'
-import { MaterialIcon } from '../ui/MaterialIcon'
+import { Container } from '../ui/Container';
+import { MaterialIcon } from '../ui/MaterialIcon';
 
 const REASONS = [
   {
@@ -19,10 +19,10 @@ const REASONS = [
   },
   {
     icon: 'bolt',
-    title: 'Efficient Process',
+    title: 'Efficient Treatment Process',
     description: 'Single-visit root canals available for most cases, respecting your time and convenience.',
   },
-] as const
+] as const;
 
 export function RctWhyChooseSection() {
   return (
@@ -42,6 +42,6 @@ export function RctWhyChooseSection() {
         </div>
       </Container>
     </section>
-  )
+  );
 }
 

@@ -6,8 +6,8 @@ export function HeroSection() {
   const whatsappLink = buildWhatsAppLink()
 
   return (
-    <section className="relative overflow-hidden pt-12 pb-24 md:py-32" id="home">
-      <Container className="grid md:grid-cols-2 items-center gap-16">
+    <section className="relative overflow-hidden pb-24 md:pb-32" id="home">
+      <Container className="mt-16 md:mt-24 grid md:grid-cols-2 items-center gap-16">
         <div className="z-10">
           <h1 className="text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.1] mb-6 tracking-tight">
             Restore Your Smile.
@@ -62,7 +62,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="relative">
+        <div className="relative w-full max-w-md sm:max-w-lg md:max-w-xl md:ml-auto">
           <div className="absolute -right-20 -top-20 w-[120%] h-[120%] bg-primary/5 rounded-full blur-3xl" />
           <div className="relative rounded-[2rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
             <img

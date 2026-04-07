@@ -1,11 +1,11 @@
-import { Container } from '../ui/Container'
-import { MaterialIcon } from '../ui/MaterialIcon'
+import { Container } from '../ui/Container';
+import { MaterialIcon } from '../ui/MaterialIcon';
 
 type Treatment = {
-  icon: string
-  title: string
-  description: string
-}
+  icon: string;
+  title: string;
+  description: string;
+};
 
 const TREATMENTS: readonly Treatment[] = [
   {
@@ -25,20 +25,10 @@ const TREATMENTS: readonly Treatment[] = [
   },
   {
     icon: 'health_and_safety',
-    title: 'Full Mouth Rehab',
+    title: 'Full Mouth Rehabilitation',
     description: 'Restoring function and aesthetics for extensive dental wear or loss.',
   },
-  {
-    icon: 'clinical_notes',
-    title: 'Root Canal',
-    description: 'Painless, rotary endodontics completed in single or few sittings.',
-  },
-  {
-    icon: 'light_mode',
-    title: 'Teeth Whitening',
-    description: 'Professional laser whitening for a brighter smile in just 45 minutes.',
-  },
-] as const
+] as const;
 
 function TreatmentCard({ icon, title, description }: Treatment) {
   return (
@@ -50,21 +40,21 @@ function TreatmentCard({ icon, title, description }: Treatment) {
         Learn More →
       </a>
     </div>
-  )
+  );
 }
 
 export function NriTreatmentsSection() {
   return (
     <section className="py-24 bg-surface">
       <Container>
-        <h2 className="text-3xl lg:text-4xl font-bold text-center mb-16">Popular Treatments for NRIs</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <h2 className="text-3xl lg:text-4xl font-bold text-center mb-16">Treatments Ideal for NRI Visits</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {TREATMENTS.map((t) => (
             <TreatmentCard key={t.title} {...t} />
           ))}
         </div>
       </Container>
     </section>
-  )
+  );
 }
 

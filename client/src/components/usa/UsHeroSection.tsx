@@ -1,9 +1,9 @@
-import { Container } from '../ui/Container'
-import { MaterialIcon } from '../ui/MaterialIcon'
-import { buildWhatsAppLink } from '../../utils/whatsapp'
+import { Container } from '../ui/Container';
+import { MaterialIcon } from '../ui/MaterialIcon';
+import { buildWhatsAppLink } from '../../utils/whatsapp';
 
 export function UsHeroSection() {
-  const whatsappLink = buildWhatsAppLink()
+  const whatsappLink = buildWhatsAppLink();
 
   return (
     <section className="relative pt-20 pb-32 overflow-hidden bg-surface">
@@ -24,18 +24,6 @@ export function UsHeroSection() {
             Dental treatments in the USA can be expensive and time-consuming. At Sparkling 32 Dental Clinic, we provide
             advanced dental care at significantly lower costs while maintaining high standards of hygiene and precision.
           </p>
-
-          <div className="mb-10 bg-surface-container-lowest rounded-2xl p-6 shadow-sm">
-            <div className="font-bold text-on-surface mb-3">Our clinic ensures:</div>
-            <ul className="space-y-2 text-on-surface-variant">
-              <li>Transparent pricing</li>
-              <li>Personalized care</li>
-              <li>Efficient treatment timelines</li>
-            </ul>
-            <p className="text-on-surface-variant mt-4">
-              Perfect for patients planning treatment during their India visit.
-            </p>
-          </div>
 
           <div className="flex flex-wrap gap-4 mb-12">
             <a
@@ -81,6 +69,6 @@ export function UsHeroSection() {
         </div>
       </Container>
     </section>
-  )
+  );
 }
 

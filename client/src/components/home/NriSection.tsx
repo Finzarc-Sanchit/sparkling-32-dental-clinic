@@ -1,18 +1,18 @@
-import { useEffect, useMemo, useState } from 'react'
-import { Container } from '../ui/Container'
-import { MaterialIcon } from '../ui/MaterialIcon'
-import { buildWhatsAppLink } from '../../utils/whatsapp'
+import { useEffect, useMemo, useState } from 'react';
+import { Container } from '../ui/Container';
+import { MaterialIcon } from '../ui/MaterialIcon';
+import { buildWhatsAppLink } from '../../utils/whatsapp';
 
-type CurrencyCode = 'INR' | 'USD' | 'GBP' | 'AED'
+type CurrencyCode = 'INR' | 'USD' | 'GBP' | 'AED';
 
 const FALLBACK_RATES: Record<CurrencyCode, number> = {
   USD: 0.012,
   GBP: 0.0094,
   AED: 0.044,
   INR: 1,
-}
+};
 
-const BASE_INR = 50000
+const BASE_INR = 50000;
 
 const STEPS = [
   { n: 1, title: 'Case Review Online', desc: 'We review your case before you travel' },
@@ -20,22 +20,22 @@ const STEPS = [
   { n: 3, title: 'Schedule in Advance', desc: 'Appointments planned around your trip' },
   { n: 4, title: 'Efficient Treatment', desc: 'Complete treatment within your stay' },
   { n: 5, title: 'Follow-up Support', desc: 'Convenient follow-up coordination' },
-] as const
+] as const;
 
-const WHATSAPP_LINK = buildWhatsAppLink()
+const WHATSAPP_LINK = buildWhatsAppLink();
 
 export function NriSection() {
-  const [rates, setRates] = useState(FALLBACK_RATES)
-  const [active, setActive] = useState<CurrencyCode>('INR')
-  const [lastUpdate, setLastUpdate] = useState<string>('Loading…')
+  const [rates, setRates] = useState(FALLBACK_RATES);
+  const [active, setActive] = useState<CurrencyCode>('INR');
+  const [lastUpdate, setLastUpdate] = useState<string>('Loading…');
 
   useEffect(() => {
-    let cancelled = false
+    let cancelled = false;
     async function run() {
       try {
-        const res = await fetch('https://api.exchangerate-api.com/v4/latest/INR')
-        const data = (await res.json()) as { rates?: Record<string, number>; time_last_updated?: number }
-        if (cancelled) return
+        const res = await fetch('https://api.exchangerate-api.com/v4/latest/INR');
+        const data = (await res.json()) as { rates?: Record<string, number>; time_last_updated?: number; };
+        if (cancelled) return;
 
         const next = {
           ...FALLBACK_RATES,
@@ -43,23 +43,23 @@ export function NriSection() {
           GBP: Number(data?.rates?.GBP ?? FALLBACK_RATES.GBP),
           AED: Number(data?.rates?.AED ?? FALLBACK_RATES.AED),
           INR: 1,
-        } satisfies Record<CurrencyCode, number>
+        } satisfies Record<CurrencyCode, number>;
 
-        setRates(next)
+        setRates(next);
         setLastUpdate(
           typeof data?.time_last_updated === 'number'
             ? new Date(data.time_last_updated * 1000).toLocaleTimeString()
             : 'Updated'
-        )
+        );
       } catch {
-        if (!cancelled) setLastUpdate('Fallback Rates Loaded')
+        if (!cancelled) setLastUpdate('Fallback Rates Loaded');
       }
     }
-    run()
+    run();
     return () => {
-      cancelled = true
-    }
-  }, [])
+      cancelled = true;
+    };
+  }, []);
 
   const formatter = useMemo(() => {
     const formatters: Record<CurrencyCode, Intl.NumberFormat> = {
@@ -67,12 +67,12 @@ export function NriSection() {
       GBP: new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' }),
       AED: new Intl.NumberFormat('en-AE', { style: 'currency', currency: 'AED' }),
       INR: new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }),
-    }
-    return formatters[active]
-  }, [active])
+    };
+    return formatters[active];
+  }, [active]);
 
-  const converted = BASE_INR * rates[active]
-  const displayLabel = active === 'INR' ? 'Indian Rupees' : `Approximate in ${active}`
+  const converted = BASE_INR * rates[active];
+  const displayLabel = active === 'INR' ? 'Indian Rupees' : `Approximate in ${active}`;
 
   return (
     <section className="py-24 bg-surface" id="nri">
@@ -82,27 +82,6 @@ export function NriSection() {
           <p className="text-on-surface-variant text-lg max-w-3xl mx-auto">
             Quality care. Transparent pricing. Planned convenience.
           </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
-            <h3 className="text-xl font-bold mb-4">Why NRIs Choose Us</h3>
-            <ul className="space-y-2 text-on-surface-variant">
-              <li>High-quality dental treatments at affordable costs</li>
-              <li>Advanced equipment and hygiene standards</li>
-              <li>Efficient scheduling with minimal waiting time</li>
-              <li>Comfortable experience for international patients</li>
-            </ul>
-          </div>
-          <div className="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
-            <h3 className="text-xl font-bold mb-4">Treatments Ideal for NRI Visits</h3>
-            <ul className="space-y-2 text-on-surface-variant">
-              <li>Dental Implants</li>
-              <li>Smile Makeovers</li>
-              <li>Veneers &amp; Crowns</li>
-              <li>Full Mouth Rehabilitation</li>
-            </ul>
-          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-24">
@@ -117,7 +96,7 @@ export function NriSection() {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-12 overflow-x-hidden">
+        <div className="grid md:grid-cols-3 gap-12 overflow-x-hidden pb-12">
           <div className="md:col-span-1 min-w-0">
             <div className="bg-surface-container-lowest border-2 border-primary/20 p-8 rounded-xl shadow-xl sticky top-24 w-full max-w-full">
               <h4 className="text-xl font-bold mb-6 text-center">Live Savings Calculator</h4>
@@ -129,7 +108,7 @@ export function NriSection() {
 
               <div className="flex flex-wrap justify-center gap-2 mb-6">
                 {(['INR', 'USD', 'GBP', 'AED'] as const).map((c) => {
-                  const isActive = c === active
+                  const isActive = c === active;
                   return (
                     <button
                       key={c}
@@ -143,7 +122,7 @@ export function NriSection() {
                     >
                       {c}
                     </button>
-                  )
+                  );
                 })}
               </div>
 
@@ -187,9 +166,9 @@ export function NriSection() {
               </table>
             </div>
 
-            <div className="mt-12 text-center">
+            <div className="mt-12 pb-8 text-center">
               <a
-                className="bg-tertiary text-on-tertiary px-10 py-5 rounded-full font-bold inline-flex items-center justify-center gap-3 hover:brightness-110 active:scale-95 transition-all shadow-xl text-lg w-full max-w-full flex-wrap text-center sm:w-auto"
+                className="bg-tertiary text-on-tertiary px-10 py-5 rounded-full font-bold inline-flex items-center justify-center gap-3 hover:brightness-110 hover:scale-100 active:scale-100 transition-all shadow-xl text-lg w-full max-w-full flex-wrap text-center sm:w-auto"
                 href={WHATSAPP_LINK}
               >
                 <span className="sm:hidden">Get Your Treatment Plan</span>
@@ -201,6 +180,6 @@ export function NriSection() {
         </div>
       </Container>
     </section>
-  )
+  );
 }
 

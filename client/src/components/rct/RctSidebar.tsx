@@ -4,7 +4,7 @@ import { MaterialIcon } from '../ui/MaterialIcon'
 const PHONE_E164 = '+919898968686'
 
 const INTERNAL_LINKS = [
-  { href: '/nri', label: 'NRI Patients' },
+  { href: '/nri-patients', label: 'NRI Patients' },
   { href: '/#services', label: 'Dental Implants' },
   { href: '/about', label: 'About Dr. Twinkle Jain' },
   { href: '/contact', label: 'Contact Us' },

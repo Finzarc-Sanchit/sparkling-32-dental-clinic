@@ -11,52 +11,51 @@ type NavLink = {
 
 const NAV_LINKS = [
   { href: '/about', label: 'About' },
-  { href: '/nri', label: 'NRI Patients' },
-  { href: '/usa', label: 'USA Patients' },
+  { href: '/nri-patients', label: 'NRI Patients' },
+  { href: '/usa-patients', label: 'USA Patients' },
   { href: '/contact', label: 'Contact' },
 ] satisfies readonly NavLink[];
 
 const SERVICES_LINKS = [
-  { href: '/#services', label: 'All Services' },
   { href: '/root-canal', label: 'Root Canal' },
 ] satisfies readonly NavLink[];
 
-const WHATSAPP_LINK = buildWhatsAppLink()
+const WHATSAPP_LINK = buildWhatsAppLink();
 
 export function TopNavBar() {
-  const location = useLocation()
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const [servicesOpen, setServicesOpen] = useState(false)
-  const servicesRef = useRef<HTMLDivElement | null>(null)
+  const location = useLocation();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement | null>(null);
 
-  const activeHref = useMemo(() => `${location.pathname}${location.hash}`, [location.hash, location.pathname])
+  const activeHref = useMemo(() => `${location.pathname}${location.hash}`, [location.hash, location.pathname]);
 
   useEffect(() => {
     // Close the mobile menu after navigation.
-    setMobileOpen(false)
-    setServicesOpen(false)
-  }, [activeHref])
+    setMobileOpen(false);
+    setServicesOpen(false);
+  }, [activeHref]);
 
   useEffect(() => {
     function onPointerDown(e: MouseEvent) {
-      if (!servicesOpen) return
-      const el = servicesRef.current
-      if (!el) return
-      if (e.target instanceof Node && !el.contains(e.target)) setServicesOpen(false)
+      if (!servicesOpen) return;
+      const el = servicesRef.current;
+      if (!el) return;
+      if (e.target instanceof Node && !el.contains(e.target)) setServicesOpen(false);
     }
     function onKeyDown(e: KeyboardEvent) {
-      if (e.key === 'Escape') setServicesOpen(false)
+      if (e.key === 'Escape') setServicesOpen(false);
     }
-    document.addEventListener('mousedown', onPointerDown)
-    document.addEventListener('keydown', onKeyDown)
+    document.addEventListener('mousedown', onPointerDown);
+    document.addEventListener('keydown', onKeyDown);
     return () => {
-      document.removeEventListener('mousedown', onPointerDown)
-      document.removeEventListener('keydown', onKeyDown)
-    }
-  }, [servicesOpen])
+      document.removeEventListener('mousedown', onPointerDown);
+      document.removeEventListener('keydown', onKeyDown);
+    };
+  }, [servicesOpen]);
 
   return (
-    <nav className="bg-surface/80 dark:bg-surface-container-low/80 backdrop-blur-xl shadow-sm fixed top-0 left-0 w-full z-50 relative">
+    <nav className="bg-surface/80 dark:bg-surface-container-low/80 backdrop-blur-xl shadow-sm fixed top-0 left-0 w-full z-50">
       <Container className="flex justify-between items-center w-full py-4">
         <NavLink className="text-2xl font-bold text-teal-800 tracking-tighter" to="/">
           Sparkling 32 Dental Clinic
@@ -66,11 +65,10 @@ export function TopNavBar() {
           <div className="relative" ref={servicesRef}>
             <button
               type="button"
-              className={`inline-flex items-center gap-1 ${
-                location.pathname === '/root-canal' || (location.pathname === '/' && location.hash === '#services')
+              className={`inline-flex items-center gap-1 ${location.pathname === '/root-canal' || (location.pathname === '/' && location.hash === '#services')
                   ? 'text-teal-700 border-b-2 border-teal-700 pb-1'
                   : 'text-on-surface-variant hover:text-teal-800 transition-colors'
-              }`}
+                }`}
               aria-haspopup="menu"
               aria-expanded={servicesOpen}
               onClick={() => setServicesOpen((v) => !v)}
@@ -81,9 +79,8 @@ export function TopNavBar() {
 
             <div
               role="menu"
-              className={`absolute top-full left-0 mt-3 w-56 rounded-xl border border-outline-variant/30 bg-surface/95 backdrop-blur-xl shadow-lg p-2 ${
-                servicesOpen ? 'block' : 'hidden'
-              }`}
+              className={`absolute top-full left-0 mt-3 w-56 rounded-xl border border-outline-variant/30 bg-surface/95 backdrop-blur-xl shadow-lg p-2 ${servicesOpen ? 'block' : 'hidden'
+                }`}
             >
               {SERVICES_LINKS.map((l) => (
                 <NavLink
@@ -106,12 +103,12 @@ export function TopNavBar() {
                 // react-router's `isActive` won't consider hash-only matches,
                 // so we treat "/#..." as active only when we're on "/" and the hash matches.
                 const isHomeHash =
-                  l.href.startsWith('/#') && location.pathname === '/' && location.hash === l.href.slice(1)
-                const active = isActive || isHomeHash
+                  l.href.startsWith('/#') && location.pathname === '/' && location.hash === l.href.slice(1);
+                const active = isActive || isHomeHash;
 
                 return active
                   ? 'text-teal-700 border-b-2 border-teal-700 pb-1'
-                  : 'text-on-surface-variant hover:text-teal-800 transition-colors'
+                  : 'text-on-surface-variant hover:text-teal-800 transition-colors';
               }}
             >
               {l.label}
@@ -141,9 +138,8 @@ export function TopNavBar() {
 
       <div
         id="mobile-nav"
-        className={`md:hidden absolute top-full left-0 w-full border-t border-outline-variant/30 bg-surface/95 backdrop-blur-xl shadow-lg ${
-          mobileOpen ? 'block' : 'hidden'
-        }`}
+        className={`md:hidden absolute top-full left-0 w-full border-t border-outline-variant/30 bg-surface/95 backdrop-blur-xl shadow-lg ${mobileOpen ? 'block' : 'hidden'
+          }`}
       >
         <Container className="py-4">
           <div className="flex flex-col gap-2 font-semibold tracking-tight">
@@ -156,11 +152,11 @@ export function TopNavBar() {
                 to={l.href}
                 className={({ isActive }) => {
                   const isHomeHash =
-                    l.href.startsWith('/#') && location.pathname === '/' && location.hash === l.href.slice(1)
-                  const active = isActive || isHomeHash
+                    l.href.startsWith('/#') && location.pathname === '/' && location.hash === l.href.slice(1);
+                  const active = isActive || isHomeHash;
                   return active
                     ? 'px-4 py-3 rounded-xl bg-primary/10 text-primary'
-                    : 'px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-low'
+                    : 'px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-low';
                 }}
               >
                 {l.label}
@@ -175,11 +171,11 @@ export function TopNavBar() {
                 to={l.href}
                 className={({ isActive }) => {
                   const isHomeHash =
-                    l.href.startsWith('/#') && location.pathname === '/' && location.hash === l.href.slice(1)
-                  const active = isActive || isHomeHash
+                    l.href.startsWith('/#') && location.pathname === '/' && location.hash === l.href.slice(1);
+                  const active = isActive || isHomeHash;
                   return active
                     ? 'px-4 py-3 rounded-xl bg-primary/10 text-primary'
-                    : 'px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-low'
+                    : 'px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-low';
                 }}
               >
                 {l.label}

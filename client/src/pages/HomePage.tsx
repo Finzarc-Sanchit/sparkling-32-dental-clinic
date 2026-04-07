@@ -1,12 +1,11 @@
-import { ContactSection } from '../components/home/ContactSection'
-import { DoctorProfile } from '../components/home/DoctorProfile'
-import { HeroSection } from '../components/home/HeroSection'
-import { MobileWhatsAppBar } from '../components/home/MobileWhatsAppBar'
-import { NriSection } from '../components/home/NriSection'
-import { PainPointEmpathy } from '../components/home/PainPointEmpathy'
-import { ServicesGrid } from '../components/home/ServicesGrid'
-import { StatsBar } from '../components/home/StatsBar'
-import { TestimonialsSection } from '../components/home/TestimonialsSection'
+import { DoctorProfile } from '../components/home/DoctorProfile';
+import { HeroSection } from '../components/home/HeroSection';
+import { MobileWhatsAppBar } from '../components/home/MobileWhatsAppBar';
+import { NriSection } from '../components/home/NriSection';
+import { PainPointEmpathy } from '../components/home/PainPointEmpathy';
+import { ServicesGrid } from '../components/home/ServicesGrid';
+import { StatsBar } from '../components/home/StatsBar';
+import { TestimonialsSection } from '../components/home/TestimonialsSection';
 
 export function HomePage() {
   return (
@@ -19,10 +18,9 @@ export function HomePage() {
         <DoctorProfile />
         <NriSection />
         <TestimonialsSection />
-        <ContactSection />
       </main>
       <MobileWhatsAppBar />
     </div>
-  )
+  );
 }
 

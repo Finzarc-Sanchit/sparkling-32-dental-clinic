@@ -1,20 +1,19 @@
-import { Container } from '../ui/Container'
-import { MaterialIcon } from '../ui/MaterialIcon'
+import { Container } from '../ui/Container';
+import { MaterialIcon } from '../ui/MaterialIcon';
 
 type Step = {
-  n: number
-  icon: string
-  title: string
-  description: string
-}
+  n: number;
+  icon: string;
+  title: string;
+  description: string;
+};
 
-const STEPS: readonly Step[] = [
-  { n: 1, icon: 'smartphone', title: 'Share X-rays', description: 'Upload your reports via WhatsApp or Email for initial review.' },
-  { n: 2, icon: 'assignment', title: 'Personalised Plan', description: 'Receive a detailed treatment roadmap and transparent quote.' },
-  { n: 3, icon: 'calendar_month', title: 'Book Dates', description: 'We align your appointments with your flight schedule.' },
-  { n: 4, icon: 'dentistry', title: 'Arrive & Treated', description: 'Painless treatment at our clinic in Mumbai sanctuary.' },
-  { n: 5, icon: 'flight_takeoff', title: 'Fly Home', description: 'Return with a confident smile and full digital records.' },
-] as const
+const APPROACH_STEPS: readonly Step[] = [
+  { n: 1, icon: 'video_call', title: 'Review your case online before you travel', description: '' },
+  { n: 2, icon: 'assignment', title: 'Share a clear treatment plan', description: '' },
+  { n: 3, icon: 'calendar_month', title: 'Schedule appointments in advance', description: '' },
+  { n: 4, icon: 'bolt', title: 'Complete treatments efficiently within your stay', description: '' },
+] as const;
 
 function StepCard({ n, icon, title, description }: Step) {
   return (
@@ -26,9 +25,9 @@ function StepCard({ n, icon, title, description }: Step) {
         </span>
       </div>
       <h3 className="text-lg font-bold mb-2">{title}</h3>
-      <p className="text-sm text-on-surface-variant">{description}</p>
+      {description ? <p className="text-sm text-on-surface-variant">{description}</p> : null}
     </div>
-  )
+  );
 }
 
 export function NriProcessSection() {
@@ -42,26 +41,17 @@ export function NriProcessSection() {
           </p>
         </div>
 
-        <ul className="max-w-3xl mx-auto bg-surface-container-lowest rounded-2xl p-8 shadow-sm space-y-3 text-on-surface-variant">
-          <li>Review your case online before you travel</li>
-          <li>Share a clear treatment plan</li>
-          <li>Schedule appointments in advance</li>
-          <li>Complete treatments efficiently within your stay</li>
-        </ul>
-
-        <div className="mt-16">
-          <h3 className="text-xl font-bold text-center mb-10">Your 5-Step Smile Journey</h3>
-          <div className="relative">
-            <div className="hidden lg:block absolute top-10 left-0 w-full h-0.5 bg-primary/20" />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 relative z-10">
-              {STEPS.map((s) => (
-                <StepCard key={s.n} {...s} />
-              ))}
-            </div>
+        <div className="relative">
+          <div className="hidden lg:block absolute top-10 left-0 w-full h-0.5 bg-primary/20" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 relative z-10">
+            {APPROACH_STEPS.map((s) => (
+              <StepCard key={s.n} {...s} />
+            ))}
           </div>
         </div>
+
       </Container>
     </section>
-  )
+  );
 }
 
