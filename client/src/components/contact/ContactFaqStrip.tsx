@@ -24,7 +24,7 @@ export function ContactFaqStrip() {
     <section className="py-24">
       <Container className="max-w-3xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-on-surface">Quick Answers</h2>
+          <h2 className="text-on-surface">Quick Answers</h2>
           <div className="h-1 w-20 bg-primary/20 mx-auto mt-4 rounded-full" />
         </div>
 
@@ -39,7 +39,7 @@ export function ContactFaqStrip() {
                 <h4 className="font-bold text-on-surface">{it.q}</h4>
                 <MaterialIcon name="expand_more" className="transition-transform duration-300 group-open:rotate-180" />
               </summary>
-              <div className="px-6 pb-6 text-on-surface-variant leading-relaxed">{it.a}</div>
+              <div className="px-6 pb-6 text-on-surface-variant">{it.a}</div>
             </details>
           ))}
         </div>

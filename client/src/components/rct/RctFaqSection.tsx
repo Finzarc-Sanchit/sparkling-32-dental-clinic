@@ -41,7 +41,7 @@ export function RctFaqSection() {
   return (
     <section className="py-24 bg-surface-container-lowest">
       <Container className="max-w-3xl">
-        <h2 className="text-4xl font-bold text-on-surface mb-12 text-center">Frequently Asked Questions</h2>
+        <h2 className="text-on-surface mb-12 text-center">Frequently Asked Questions</h2>
         <div className="space-y-4">
           {FAQ.map((it) => (
             <details
@@ -49,7 +49,7 @@ export function RctFaqSection() {
               className="group bg-surface rounded-2xl border border-outline-variant/30 overflow-hidden"
               open={Boolean((it as { open?: boolean }).open)}
             >
-              <summary className="flex justify-between items-center p-6 cursor-pointer font-bold text-lg text-on-surface hover:bg-surface-container-high transition-colors list-none">
+              <summary className="flex justify-between items-center p-6 cursor-pointer font-bold text-on-surface hover:bg-surface-container-high transition-colors list-none">
                 {it.q}
                 <MaterialIcon name="expand_more" className="transition-transform group-open:rotate-180" />
               </summary>

@@ -32,7 +32,7 @@ export function TestimonialsSection() {
   return (
     <section className="py-24 bg-surface-container-low">
       <Container>
-        <h2 className="text-4xl font-bold text-center mb-16">Patients from 30+ countries trust us</h2>
+        <h2 className="text-center mb-16">Patients from 30+ countries trust us</h2>
 
         <div className="flex overflow-x-auto gap-8 pb-12 snap-x no-scrollbar">
           {TESTIMONIALS.map((t) => (
@@ -53,7 +53,7 @@ export function TestimonialsSection() {
                 </div>
                 <div className={t.featured ? 'text-primary-fixed' : 'text-tertiary'}>{t.stars}</div>
               </div>
-              <p className={t.featured ? 'leading-relaxed text-white italic mb-4' : 'text-on-surface-variant leading-relaxed italic mb-4'}>
+              <p className={t.featured ? 'text-white italic mb-4' : 'text-on-surface-variant italic mb-4'}>
                 {t.quote}
               </p>
             </div>

@@ -36,8 +36,8 @@ export function ServicesGrid() {
       <Container>
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Dental Services at Sparkling 32</h2>
-            <p className="text-on-surface-variant text-lg">
+            <h2 className="mb-4">Dental Services at Sparkling 32</h2>
+            <p className="text-on-surface-variant">
               A complete range of treatments—from routine dental care to advanced cosmetic procedures.
             </p>
           </div>
@@ -53,7 +53,7 @@ export function ServicesGrid() {
               className="bg-surface-container-lowest p-8 rounded-xl hover:-translate-y-2 transition-all duration-300 shadow-sm hover:shadow-xl"
             >
               <MaterialIcon name={s.icon} className="text-primary text-4xl mb-6" />
-              <h4 className="text-xl font-bold mb-2">{s.title}</h4>
+              <h4 className="mb-2 font-bold">{s.title}</h4>
               <p className="text-on-surface-variant mb-6">{s.desc}</p>
               <a className="text-primary font-bold text-sm uppercase tracking-wider hover:underline" href="#">
                 Learn More →

@@ -14,8 +14,8 @@ function IconCard({ icon, title, description }: IconCardProps) {
       <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
         <MaterialIcon name={icon} className="text-primary text-3xl" />
       </div>
-      <h3 className="text-xl font-bold text-on-surface mb-3">{title}</h3>
-      {description ? <p className="text-on-surface-variant leading-relaxed">{description}</p> : null}
+      <h3 className="text-on-surface mb-3">{title}</h3>
+      {description ? <p className="text-on-surface-variant">{description}</p> : null}
     </div>
   )
 }

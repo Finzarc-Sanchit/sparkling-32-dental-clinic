@@ -44,7 +44,7 @@ function Card(t: Testimonial) {
         <MaterialIcon name="format_quote" />
       </div>
       <Stars />
-      <p className="text-xl text-on-surface leading-relaxed italic mb-8">{t.quote}</p>
+      <p className="text-on-surface italic mb-8">{t.quote}</p>
       <div className="flex items-center gap-4">
         <div className="w-12 h-12 rounded-full bg-secondary-container overflow-hidden">
           <img alt={t.name} className="w-full h-full object-cover" src={t.imageSrc} />
@@ -67,7 +67,7 @@ export function UsTestimonialsSection() {
   return (
     <section className="py-24 bg-surface">
       <Container>
-        <h2 className="text-4xl font-extrabold text-on-surface mb-16 text-center">US Patients Who Chose Sparkling 32</h2>
+        <h2 className="text-on-surface mb-16 text-center">US Patients Who Chose Sparkling 32</h2>
         <div className="grid md:grid-cols-2 gap-12">
           {TESTIMONIALS.map((t) => (
             <Card key={t.name} {...t} />

@@ -20,7 +20,7 @@ function Timeline({ items }: { items: readonly TimelineItem[] }) {
             <div className="md:text-center">
               <span className="block text-2xl font-bold text-primary mb-1">{it.year}</span>
               <h4 className="font-bold text-on-surface mb-2">{it.title}</h4>
-              <p className="text-sm text-on-surface-variant">{it.description}</p>
+              <p className="text-on-surface-variant">{it.description}</p>
             </div>
           </div>
         ))}

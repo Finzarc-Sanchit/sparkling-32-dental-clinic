@@ -16,7 +16,7 @@ export function ContactDetailsStrip() {
             <MaterialIcon name="location_on" className="text-sm" />
             Address
           </div>
-          <p className="font-medium text-white leading-relaxed">{ADDRESS}</p>
+          <p className="text-white">{ADDRESS}</p>
           <a
             className="inline-block text-on-primary underline underline-offset-4 decoration-white/40 hover:decoration-white transition-all font-semibold"
             href={MAPS_PLACE_LINK}
@@ -32,8 +32,8 @@ export function ContactDetailsStrip() {
             <MaterialIcon name="schedule" className="text-sm" />
             Clinic Hours
           </div>
-          <p className="font-medium text-white">Monday – Sunday, By Appointment Only.</p>
-          <p className="text-sm opacity-90 italic text-white">"We recommend calling ahead or booking via WhatsApp"</p>
+          <p className="text-white">Monday – Sunday, By Appointment Only.</p>
+          <p className="opacity-90 italic text-white">"We recommend calling ahead or booking via WhatsApp"</p>
         </div>
 
         <div className="space-y-3">

@@ -23,9 +23,9 @@ export function DoctorProfile() {
           </div>
 
           <div className="w-full md:w-1/2">
-            <h2 className="text-4xl font-bold mb-3 leading-tight">Dr. Twinkle Jain</h2>
+            <h2 className="mb-3">Dr. Twinkle Jain</h2>
             <div className="text-primary font-bold uppercase tracking-widest text-xs mb-6">About Doctor</div>
-            <p className="text-xl text-on-surface-variant leading-relaxed mb-8">
+            <p className="text-on-surface-variant mb-8">
               Dr. Twinkle Jain is a dedicated dental surgeon with expertise in cosmetic and general dentistry. A graduate of
               Bharati Vidyapeeth Dental College, she brings a patient-centric approach—ensuring every treatment is comfortable,
               well-explained, and tailored to individual needs.

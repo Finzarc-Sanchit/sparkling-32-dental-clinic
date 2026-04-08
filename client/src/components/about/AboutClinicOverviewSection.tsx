@@ -32,8 +32,8 @@ export function AboutClinicOverviewSection() {
           />
         </div>
         <div className="w-full md:w-1/2">
-          <h2 className="text-4xl font-bold text-on-surface mb-8">Our Clinic</h2>
-          <p className="text-lg text-on-surface-variant mb-10 leading-relaxed">
+          <h2 className="text-on-surface mb-8">Our Clinic</h2>
+          <p className="text-on-surface-variant mb-10">
             Located in the heart of Mumbai, Sparkling 32 is designed to be more than just a dental office. It is a space
             where advanced medical science meets high-end hospitality.
           </p>

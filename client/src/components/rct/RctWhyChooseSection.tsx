@@ -28,13 +28,13 @@ export function RctWhyChooseSection() {
   return (
     <section className="py-24">
       <Container>
-        <h2 className="text-4xl font-bold text-on-surface mb-16 text-center">Why Patients Choose Us for Root Canal</h2>
+        <h2 className="text-on-surface mb-16 text-center">Why Patients Choose Us for Root Canal</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {REASONS.map((r) => (
             <div key={r.title} className="flex gap-6 p-8 bg-surface-container-low rounded-3xl">
               <MaterialIcon name={r.icon} className="text-primary text-4xl" />
               <div>
-                <h3 className="text-xl font-bold text-on-surface mb-2">{r.title}</h3>
+                <h3 className="text-on-surface mb-2">{r.title}</h3>
                 <p className="text-on-surface-variant">{r.description}</p>
               </div>
             </div>

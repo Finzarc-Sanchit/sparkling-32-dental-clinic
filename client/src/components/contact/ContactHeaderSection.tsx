@@ -14,10 +14,10 @@ export function ContactHeaderSection() {
   return (
     <section className="bg-surface-container-low py-20">
       <Container className="max-w-4xl text-center space-y-8">
-        <h1 className="text-5xl md:text-6xl font-bold text-on-surface tracking-tight leading-tight">
+        <h1 className="text-on-surface">
           Contact Sparkling 32 Dental Clinic
         </h1>
-        <p className="text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+        <p className="text-on-surface-variant max-w-2xl mx-auto">
           We're available on WhatsApp, phone, and email. Most WhatsApp messages are answered within{' '}
           <span className="font-bold text-primary">2 hours</span>.
         </p>

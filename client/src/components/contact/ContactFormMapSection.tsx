@@ -57,7 +57,7 @@ export function ContactFormMapSection() {
       <Container className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         <div className="bg-surface-container-lowest p-8 md:p-12 rounded-xl shadow-[0_32px_32px_-4px_rgba(69,69,91,0.06)] border border-outline-variant/15">
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-on-surface mb-2">Send Us a Message</h2>
+            <h2 className="text-on-surface mb-2">Send Us a Message</h2>
             <p className="text-on-surface-variant">We'll get back to you within 24 hours.</p>
           </div>
 
@@ -197,21 +197,21 @@ export function ContactFormMapSection() {
           </div>
 
           <div className="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/20 space-y-6">
-            <h3 className="text-xl font-bold text-on-surface flex items-center gap-2">
+            <h3 className="text-on-surface flex items-center gap-2">
               <MaterialIcon name="explore" className="text-primary" />
               How to Find Us
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-on-surface-variant">
               <div className="space-y-3">
-                <p className="font-bold text-on-surface">By Train</p>
+                <p className="text-on-surface">By Train</p>
                 <p>5 mins walk from Khar Road Station. Head towards 3rd Road West.</p>
-                <p className="font-bold text-on-surface">Landmarks</p>
+                <p className="text-on-surface">Landmarks</p>
                 <p>Near the iconic Khar West Gurudwara and Bhagwan Society.</p>
               </div>
               <div className="space-y-3">
-                <p className="font-bold text-on-surface">From Airport</p>
+                <p className="text-on-surface">From Airport</p>
                 <p>Approx. 20-30 mins drive from Chhatrapati Shivaji Maharaj International Airport (T2).</p>
-                <p className="font-bold text-on-surface">Parking</p>
+                <p className="text-on-surface">Parking</p>
                 <p>Valet parking available upon prior request for appointments.</p>
               </div>
             </div>

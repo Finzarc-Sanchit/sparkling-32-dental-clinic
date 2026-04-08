@@ -19,8 +19,8 @@ export function UsCtaSection() {
           </div>
 
           <div className="relative z-10">
-            <h2 className="text-4xl lg:text-5xl font-extrabold mb-8">Ready to Plan Your Treatment?</h2>
-            <p className="text-xl mb-12 opacity-90 max-w-2xl mx-auto text-white">
+            <h2 className="mb-8">Ready to Plan Your Treatment?</h2>
+            <p className="mb-12 opacity-90 max-w-2xl mx-auto text-white">
               Get a free digital consultation and a cost comparison report within 24 hours.
             </p>
             <a

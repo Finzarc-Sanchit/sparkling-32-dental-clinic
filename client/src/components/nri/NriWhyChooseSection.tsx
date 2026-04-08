@@ -33,7 +33,7 @@ function WhyCard({ icon, title, description }: Card) {
       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6 text-primary">
         <MaterialIcon name={icon} className="text-3xl text-primary" />
       </div>
-      <h3 className="text-xl font-bold mb-3">{title}</h3>
+      <h3 className="mb-3">{title}</h3>
       {description ? <p className="text-on-surface-variant">{description}</p> : null}
     </div>
   )

@@ -18,8 +18,8 @@ function StepCard({ n, title, description }: Step) {
   return (
     <div className="relative bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-outline-variant/10">
       <div className="text-5xl font-black text-primary/10 mb-4">{n}</div>
-      <h4 className="font-bold text-lg mb-2">{title}</h4>
-      <p className="text-sm text-on-surface-variant">{description}</p>
+      <h4 className="font-bold mb-2">{title}</h4>
+      <p className="text-on-surface-variant">{description}</p>
     </div>
   )
 }
@@ -28,7 +28,7 @@ export function UsProcessSection() {
   return (
     <section className="py-24 bg-surface-container-low">
       <Container>
-        <h2 className="text-4xl font-extrabold text-on-surface mb-16 text-center">How We Make Your Trip Easy</h2>
+        <h2 className="text-on-surface mb-16 text-center">How We Make Your Trip Easy</h2>
         <div className="grid lg:grid-cols-5 gap-4">
           {STEPS.map((s) => (
             <StepCard key={s.n} {...s} />

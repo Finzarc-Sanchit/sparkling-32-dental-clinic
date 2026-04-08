@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-16">
           <div>
             <div className="text-2xl font-bold mb-6">Sparkling 32 Dental Clinic</div>
-            <p className="opacity-80 text-sm text-on-primary leading-relaxed">
+            <p className="opacity-80 text-on-primary">
               Sparkling 32 Dental Clinic is a modern dental care center in Mumbai offering a complete range of treatments—from
               routine dental care to advanced cosmetic procedures.
             </p>

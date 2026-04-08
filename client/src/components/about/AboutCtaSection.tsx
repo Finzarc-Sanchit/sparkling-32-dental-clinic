@@ -12,8 +12,8 @@ export function AboutCtaSection() {
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
           <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Ready to meet us?</h2>
-            <p className="text-primary bg-white/90 inline-block px-4 py-1 rounded-full text-sm font-bold mb-10 uppercase tracking-widest">
+            <h2 className="text-white mb-6">Ready to meet us?</h2>
+            <p className="text-primary bg-white/90 inline-block px-4 py-1 rounded-full mb-10">
               Experience world-class dental care
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6">

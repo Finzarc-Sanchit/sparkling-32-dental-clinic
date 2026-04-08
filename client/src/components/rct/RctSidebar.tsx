@@ -15,8 +15,8 @@ export function RctSidebar() {
 
   return (
     <aside className="hidden lg:block fixed right-10 top-40 z-40 w-80 bg-surface-container-lowest border-t-4 border-primary rounded-xl shadow-xl p-6">
-      <h3 className="text-xl font-bold text-on-surface mb-4">Book Your Root Canal Consultation</h3>
-      <p className="text-sm text-on-surface-variant mb-6">Expert care for NRI &amp; local patients in Mumbai.</p>
+      <h3 className="text-on-surface mb-4">Book Your Root Canal Consultation</h3>
+      <p className="text-on-surface-variant mb-6">Expert care for NRI &amp; local patients in Mumbai.</p>
 
       <div className="space-y-3">
         <a
@@ -36,7 +36,7 @@ export function RctSidebar() {
       </div>
 
       <div className="mt-6 pt-6 border-t border-outline-variant/20">
-        <p className="text-xs font-semibold text-primary uppercase tracking-widest mb-4">Internal Links</p>
+        <p className="text-primary mb-4">Internal Links</p>
         <ul className="space-y-2 text-sm text-on-surface-variant">
           {INTERNAL_LINKS.map((l) => (
             <li key={l.href}>

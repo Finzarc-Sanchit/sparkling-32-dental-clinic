@@ -25,7 +25,7 @@ export function RctFocusSection() {
   return (
     <section className="py-24">
       <Container>
-        <h2 className="text-4xl font-bold text-on-surface mb-16 text-center">
+        <h2 className="text-on-surface mb-16 text-center">
           Root canal treatment helps save infected teeth and eliminate pain effectively.
         </h2>
 
@@ -38,8 +38,8 @@ export function RctFocusSection() {
                   {s.n}
                 </div>
                 <div className="bg-surface-container-low p-8 rounded-3xl">
-                  <h3 className="text-2xl font-bold text-on-surface mb-2">{s.title}</h3>
-                  <p className="text-on-surface-variant text-lg">{s.description}</p>
+                  <h3 className="text-on-surface mb-2">{s.title}</h3>
+                  <p className="text-on-surface-variant">{s.description}</p>
                 </div>
               </div>
             ))}

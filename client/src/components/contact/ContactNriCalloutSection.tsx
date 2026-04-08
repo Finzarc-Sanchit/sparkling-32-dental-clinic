@@ -12,8 +12,8 @@ export function ContactNriCalloutSection() {
           <MaterialIcon name="flight_takeoff" className="text-sm" />
           International Services
         </div>
-        <h2 className="text-4xl font-bold text-on-surface">Travelling from Abroad?</h2>
-        <p className="text-lg text-on-surface-variant leading-relaxed max-w-2xl mx-auto">
+        <h2 className="text-on-surface">Travelling from Abroad?</h2>
+        <p className="text-on-surface-variant max-w-2xl mx-auto">
           NRI patients can start the consultation process before flying. Share your X-rays on WhatsApp and receive your
           treatment plan within <span className="font-bold">24 hours</span>.
         </p>

@@ -30,8 +30,8 @@ export function ContactSection() {
     <section className="py-24 bg-surface" id="contact">
       <Container className="grid md:grid-cols-2 gap-16">
         <div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Contact Sparkling 32 Dental Clinic</h2>
-          <p className="text-xl text-on-surface-variant mb-12">
+          <h2 className="mb-6">Contact Sparkling 32 Dental Clinic</h2>
+          <p className="text-on-surface-variant mb-12">
             3rd Road, Bhagwan Society, Near Gurudwara, Khar West, Mumbai
           </p>
 
@@ -127,7 +127,7 @@ export function ContactSection() {
               <MaterialIcon name="schedule" className="text-primary" />
               Timings: Monday – Sunday (By Appointment)
             </div>
-            <p className="text-sm text-on-surface-variant pl-10">
+            <p className="text-on-surface-variant pl-10">
               Efficient scheduling with minimal waiting time and personalized attention.
             </p>
           </div>

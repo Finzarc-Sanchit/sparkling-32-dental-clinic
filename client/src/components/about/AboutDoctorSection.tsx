@@ -15,8 +15,8 @@ export function AboutDoctorSection() {
 
         <div className="w-full md:w-7/12">
           <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">About Doctor</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-on-surface mb-6">Dr. Twinkle Jain</h2>
-          <p className="text-lg text-on-surface-variant mb-10 leading-relaxed">
+          <h2 className="text-on-surface mb-6">Dr. Twinkle Jain</h2>
+          <p className="text-on-surface-variant mb-10">
             Dr. Twinkle Jain is a dedicated dental surgeon with expertise in cosmetic and general dentistry. A graduate of
             Bharati Vidyapeeth Dental College, she brings a patient-centric approach to dentistry—ensuring every treatment is
             comfortable, well-explained, and tailored to individual needs. Her ability to handle patients calmly and her
@@ -36,7 +36,7 @@ export function AboutDoctorSection() {
                 </span>
                 <div>
                   <h4 className="font-bold text-on-surface">{c.title}</h4>
-                  <p className="text-sm text-on-surface-variant">{c.sub}</p>
+                  <p className="text-on-surface-variant">{c.sub}</p>
                 </div>
               </div>
             ))}

@@ -5,10 +5,10 @@ export function AboutHeroSection() {
     <section className="relative pt-24 pb-32 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
       <Container className="text-center relative z-10">
-        <h1 className="text-5xl md:text-7xl font-bold text-on-surface mb-8 leading-[1.1] tracking-tight">
+        <h1 className="text-on-surface mb-8">
           About Sparkling 32 Dental Clinic
         </h1>
-        <p className="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+        <p className="text-on-surface-variant max-w-2xl mx-auto">
           Sparkling 32 Dental Clinic is a modern dental care center in Mumbai offering a complete range of treatments—from
           routine dental care to advanced cosmetic procedures.
         </p>

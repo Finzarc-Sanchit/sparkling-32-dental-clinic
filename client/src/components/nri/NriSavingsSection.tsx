@@ -66,9 +66,9 @@ export function NriSavingsSection() {
             </div>
 
             <div className="p-6 bg-primary/10 rounded-xl text-center">
-              <p className="text-sm text-primary font-bold uppercase mb-2">Indicative Conversion</p>
+              <p className="text-primary mb-2">Indicative Conversion</p>
               <div className="text-4xl font-extrabold text-on-surface">{formatter.format(converted)}</div>
-              <p className="text-xs text-on-surface-variant mt-2">*Indicative conversion. Rates vary daily.</p>
+              <p className="text-on-surface-variant mt-2">*Indicative conversion. Rates vary daily.</p>
             </div>
           </div>
 
@@ -91,7 +91,7 @@ export function NriSavingsSection() {
                 ))}
               </tbody>
             </table>
-            <p className="mt-4 text-sm text-on-surface-variant italic">
+            <p className="mt-4 text-on-surface-variant italic">
               **Costs are approximate and depend on material choices and complexity.
             </p>
           </div>

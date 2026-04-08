@@ -61,7 +61,7 @@ export function NriFaqSection() {
   return (
     <section className="py-24 bg-surface">
       <Container className="max-w-3xl">
-        <h2 className="text-3xl lg:text-4xl font-bold text-center mb-16">Frequently Asked Questions</h2>
+        <h2 className="text-center mb-16">Frequently Asked Questions</h2>
         <div className="space-y-4">
           {FAQ.map((item, idx) => (
             <FaqRow

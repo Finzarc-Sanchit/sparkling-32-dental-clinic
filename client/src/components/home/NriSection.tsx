@@ -78,8 +78,8 @@ export function NriSection() {
     <section className="py-24 bg-surface" id="nri">
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Dental Treatment in India for NRI Patients</h2>
-          <p className="text-on-surface-variant text-lg max-w-3xl mx-auto">
+          <h2 className="mb-4">Dental Treatment in India for NRI Patients</h2>
+          <p className="text-on-surface-variant max-w-3xl mx-auto">
             Quality care. Transparent pricing. Planned convenience.
           </p>
         </div>
@@ -91,7 +91,7 @@ export function NriSection() {
                 {s.n}
               </div>
               <h5 className="font-bold mb-2">{s.title}</h5>
-              <p className="text-xs text-on-surface-variant">{s.desc}</p>
+              <p className="text-on-surface-variant">{s.desc}</p>
             </div>
           ))}
         </div>
@@ -99,7 +99,7 @@ export function NriSection() {
         <div className="grid md:grid-cols-3 gap-12 overflow-x-hidden pb-12">
           <div className="md:col-span-1 min-w-0">
             <div className="bg-surface-container-lowest border-2 border-primary/20 p-8 rounded-xl shadow-xl sticky top-24 w-full max-w-full">
-              <h4 className="text-xl font-bold mb-6 text-center">Live Savings Calculator</h4>
+              <h4 className="mb-6 text-center font-bold">Live Savings Calculator</h4>
               <div className="bg-primary/5 p-6 rounded-xl text-center mb-6">
                 <div className="text-sm text-primary font-bold uppercase mb-2">Sample Treatment Cost</div>
                 <div className="text-4xl font-extrabold text-on-surface mb-1">{formatter.format(converted)}</div>

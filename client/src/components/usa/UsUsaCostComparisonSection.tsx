@@ -56,7 +56,7 @@ export function UsUsaCostComparisonSection() {
     <section className="py-24 bg-surface-container-low" id="cost">
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-on-surface mb-4">What You'd Pay in the USA vs. At Our Clinic</h2>
+          <h2 className="text-on-surface mb-4">What You'd Pay in the USA vs. At Our Clinic</h2>
           <div className="flex justify-center items-center gap-4 mt-8">
             <span className="text-sm font-bold text-on-surface-variant">CURRENCY</span>
             <div className="bg-surface-container-highest p-1 rounded-full flex gap-1">
@@ -103,12 +103,12 @@ export function UsUsaCostComparisonSection() {
 
         <div className="mt-8 p-6 bg-tertiary/10 rounded-2xl flex items-center gap-4 text-tertiary border border-tertiary/20">
           <MaterialIcon name="lightbulb" filled className="flex-shrink-0" />
-          <p className="font-bold">
+          <p>
             Most patients save enough to cover their entire India trip, including flights and 5-star accommodation in Mumbai.
           </p>
         </div>
 
-        <p className="mt-4 text-sm text-on-surface-variant text-center">{note}</p>
+        <p className="mt-4 text-on-surface-variant text-center">{note}</p>
       </Container>
     </section>
   )

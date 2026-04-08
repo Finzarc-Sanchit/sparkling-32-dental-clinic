@@ -29,7 +29,7 @@ export function RctSymptomsSection() {
     <section className="py-24 bg-surface-container-low">
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-on-surface mb-4">Do You Need a Root Canal?</h2>
+          <h2 className="text-on-surface mb-4">Do You Need a Root Canal?</h2>
           <p className="text-on-surface-variant max-w-2xl mx-auto">
             Early intervention can save your tooth. Look out for these common warning signs.
           </p>
@@ -41,7 +41,7 @@ export function RctSymptomsSection() {
               <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
                 <MaterialIcon name={s.icon} className="text-3xl text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-on-surface mb-3">{s.title}</h3>
+              <h3 className="text-on-surface mb-3">{s.title}</h3>
               <p className="text-on-surface-variant">{s.description}</p>
             </div>
           ))}

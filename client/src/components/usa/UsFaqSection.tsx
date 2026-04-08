@@ -27,7 +27,7 @@ export function UsFaqSection() {
   return (
     <section className="py-24 bg-surface-container-low">
       <Container className="max-w-4xl">
-        <h2 className="text-4xl font-extrabold text-on-surface mb-12 text-center">Frequently Asked Questions</h2>
+        <h2 className="text-on-surface mb-12 text-center">Frequently Asked Questions</h2>
         <div className="space-y-4">
           {ITEMS.map((it) => (
             <details key={it.q} className="group bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden" open={Boolean(it.open)}>
@@ -35,7 +35,7 @@ export function UsFaqSection() {
                 {it.q}
                 <MaterialIcon name="expand_more" className="group-open:rotate-180 transition-transform" />
               </summary>
-              <div className="p-6 pt-0 text-on-surface-variant leading-relaxed">{it.a}</div>
+              <div className="p-6 pt-0 text-on-surface-variant">{it.a}</div>
             </details>
           ))}
         </div>

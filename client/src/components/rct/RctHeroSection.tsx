@@ -21,10 +21,10 @@ export function RctHeroSection() {
           <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider text-primary bg-primary/10 rounded-full">
             SPECIALIZED ENDODONTICS
           </span>
-          <h1 className="text-5xl lg:text-6xl font-bold text-on-surface leading-[1.1] mb-6">
+          <h1 className="text-on-surface mb-6">
             Painless Root Canal Treatment in Mumbai
           </h1>
-          <p className="text-xl text-on-surface-variant mb-10 max-w-xl">
+          <p className="text-on-surface-variant mb-10 max-w-xl">
             Save your natural tooth. Eliminate the pain. Most patients are surprised by how comfortable it is.
           </p>
 

@@ -20,8 +20,8 @@ export function RctPricingSection() {
       <Container>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-4xl font-bold mb-6">Transparent Pricing</h2>
-            <p className="text-xl mb-12 opacity-90 text-white">
+            <h2 className="mb-6">Transparent Pricing</h2>
+            <p className="mb-12 opacity-90 text-white">
               Honest, upfront costs with no hidden fees. We provide premium care that is accessible to both local and
               international patients.
             </p>
@@ -48,8 +48,8 @@ export function RctPricingSection() {
               </div>
 
               <div className="text-center py-6">
-                <p className="text-sm uppercase tracking-widest opacity-80 mb-2 text-white">Investment per tooth</p>
-                <h3 className="text-5xl lg:text-6xl font-extrabold">{display.investment}</h3>
+                <p className="opacity-80 mb-2 text-white">Investment per tooth</p>
+                <h3>{display.investment}</h3>
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@ export function RctPricingSection() {
             <div className="inline-flex sm:absolute mb-6 sm:mb-0 sm:-top-6 sm:-right-6 bg-tertiary text-white px-6 py-2 rounded-full font-bold shadow-lg rotate-0 sm:rotate-3">
               Comparison Note
             </div>
-            <h4 className="text-2xl font-bold mb-6 text-on-surface">Global Savings</h4>
+            <h4 className="mb-6 text-on-surface font-bold">Global Savings</h4>
             <div className="space-y-6">
               <div className="flex items-center justify-between p-4 bg-surface-container-low rounded-2xl">
                 <span>Same treatment in USA</span>
@@ -68,7 +68,7 @@ export function RctPricingSection() {
                 <span>Sparkling 32 Mumbai</span>
                 <span className="font-bold text-primary">{display.mumbai}</span>
               </div>
-              <p className="text-sm text-on-surface-variant italic mt-4">
+              <p className="text-on-surface-variant italic mt-4">
                 Save over 85% compared to international prices while receiving world-class specialized care.
               </p>
             </div>

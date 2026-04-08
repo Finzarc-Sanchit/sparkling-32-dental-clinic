@@ -41,15 +41,15 @@ export function NriHeroSection() {
             Global Standards, Mumbai Warmth
           </motion.span>
 
-          <motion.h1 variants={textItem} transition={textEase} className="text-4xl lg:text-6xl font-extrabold text-on-surface leading-tight mb-6">
+          <motion.h1 variants={textItem} transition={textEase} className="text-on-surface mb-6">
             Dental Treatment in India for <span className="text-primary">NRI Patients</span>
           </motion.h1>
 
-          <motion.p variants={textItem} transition={textEase} className="text-xl lg:text-2xl font-semibold text-on-surface-variant mb-4">
+          <motion.p variants={textItem} transition={textEase} className="text-on-surface-variant mb-4">
             Quality Care. Transparent Pricing. Planned Convenience.
           </motion.p>
 
-          <motion.p variants={textItem} transition={textEase} className="text-lg text-on-surface-variant mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+          <motion.p variants={textItem} transition={textEase} className="text-on-surface-variant mb-10 max-w-2xl mx-auto lg:mx-0">
             Trusted by patients from USA, UK, UAE, Canada, and Australia. Experience world-class clinical excellence at a
             fraction of the global cost, perfectly timed with your visit home.
           </motion.p>
@@ -111,7 +111,7 @@ export function NriHeroSection() {
                 <MaterialIcon key={i} name="star" filled className="text-sm" />
               ))}
             </div>
-            <p className="text-sm italic text-on-surface-variant font-medium">"Smooth experience from London to Mumbai!"</p>
+            <p className="italic text-on-surface-variant">"Smooth experience from London to Mumbai!"</p>
           </div>
         </motion.div>
       </Container>

@@ -1,15 +1,15 @@
-import { Outlet, Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react'
+import { Outlet, Route, Routes } from 'react-router-dom'
 import { SiteFooter } from './components/home/SiteFooter';
 import { TopNavBar } from './components/home/TopNavBar';
-import { AboutPage } from './pages/AboutPage';
-import { ContactPage } from './pages/ContactPage';
-import { HomePage } from './pages/HomePage';
-import { NriPatientsPage } from './pages/NriPatientsPage';
-import { UsPatientsPage } from './pages/UsPatientsPage';
-import { RootCanalPage } from './pages/RootCanalPage';
-import { useEffect } from 'react';
 import ScrollToTop from './components/ScrollToTop';
 import Lenis from 'lenis';
+import { AboutPage } from './pages/AboutPage'
+import { ContactPage } from './pages/ContactPage'
+import { HomePage } from './pages/HomePage'
+import { NriPatientsPage } from './pages/NriPatientsPage'
+import { RootCanalPage } from './pages/RootCanalPage'
+import { UsPatientsPage } from './pages/UsPatientsPage'
 
 function AppLayout() {
   useEffect(() => {

@@ -16,11 +16,11 @@ export function UsHeroSection() {
             US Patients Welcomed
           </div>
 
-          <h1 className="text-5xl lg:text-7xl font-extrabold text-on-surface leading-tight mb-6 tracking-tight">
+          <h1 className="text-on-surface mb-6">
             Dental Treatment in India for Patients from the USA
           </h1>
 
-          <p className="text-xl text-on-surface-variant mb-8 max-w-xl leading-relaxed">
+          <p className="text-on-surface-variant mb-8 max-w-xl">
             Dental treatments in the USA can be expensive and time-consuming. At Sparkling 32 Dental Clinic, we provide
             advanced dental care at significantly lower costs while maintaining high standards of hygiene and precision.
           </p>

@@ -31,8 +31,8 @@ function QualityCard({ icon, title, description }: Card) {
       <div className="w-16 h-16 bg-primary-container/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors">
         <MaterialIcon name={icon} className="text-3xl" />
       </div>
-      <h3 className="text-xl font-bold mb-4 text-on-surface">{title}</h3>
-      <p className="text-on-surface-variant leading-relaxed">{description}</p>
+      <h3 className="mb-4 text-on-surface">{title}</h3>
+      <p className="text-on-surface-variant">{description}</p>
     </div>
   )
 }
@@ -41,7 +41,7 @@ export function UsQualitySection() {
   return (
     <section className="py-24 bg-surface">
       <Container>
-        <h2 className="text-4xl font-extrabold text-on-surface mb-16 text-center">Our clinic ensures:</h2>
+        <h2 className="text-on-surface mb-16 text-center">Our clinic ensures:</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {CARDS.map((c) => (
             <QualityCard key={c.title} {...c} />

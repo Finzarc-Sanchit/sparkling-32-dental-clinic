@@ -24,8 +24,8 @@ function StepCard({ n, icon, title, description }: Step) {
           <MaterialIcon name={icon} className="text-xl" />
         </span>
       </div>
-      <h3 className="text-lg font-bold mb-2">{title}</h3>
-      {description ? <p className="text-sm text-on-surface-variant">{description}</p> : null}
+      <h3 className="mb-2">{title}</h3>
+      {description ? <p className="text-on-surface-variant">{description}</p> : null}
     </div>
   );
 }
@@ -35,7 +35,7 @@ export function NriProcessSection() {
     <section className="py-24 bg-surface-container-low overflow-hidden" id="nri-plan">
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold">Our Approach for NRI Patients</h2>
+          <h2>Our Approach for NRI Patients</h2>
           <p className="text-on-surface-variant max-w-2xl mx-auto mt-4">
             We understand your time is limited. That’s why we:
           </p>

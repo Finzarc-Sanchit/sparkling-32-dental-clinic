@@ -49,7 +49,7 @@ export function NriTestimonialsSection() {
   return (
     <section className="py-24 bg-surface-container-low">
       <Container>
-        <h2 className="text-3xl lg:text-4xl font-bold text-center mb-16">Global Stories from Mumbai</h2>
+        <h2 className="text-center mb-16">Global Stories from Mumbai</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {TESTIMONIALS.map((t) => (
             <div key={t.name} className="bg-surface-container-lowest p-8 rounded-2xl shadow-sm relative">
@@ -59,7 +59,7 @@ export function NriTestimonialsSection() {
                 <img alt={t.name} className="w-12 h-12 rounded-full object-cover" src={t.imageSrc} />
                 <div>
                   <h4 className="font-bold">{t.name}</h4>
-                  <p className="text-xs text-on-surface-variant flex items-center gap-1">
+                  <p className="text-on-surface-variant flex items-center gap-1">
                     <MaterialIcon name="location_on" className="text-sm text-primary" />
                     {t.location}
                   </p>
