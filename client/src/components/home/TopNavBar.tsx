@@ -1,8 +1,7 @@
 import { Container } from '../ui/Container';
 import { MaterialIcon } from '../ui/MaterialIcon';
 import { Button } from '../ui/button';
-import { Link } from 'react-router-dom';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 type NavLink = {
@@ -25,6 +24,7 @@ const CONTACT_ROUTE = '/contact';
 
 export function TopNavBar() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement | null>(null);
@@ -128,7 +128,7 @@ export function TopNavBar() {
         <Button
           variant="ghost"
           className="hidden md:inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-primary hover:text-on-primary hover:brightness-110 shadow-sm"
-          render={<Link to={CONTACT_ROUTE} />}
+          onClick={() => navigate(CONTACT_ROUTE)}
         >
           <MaterialIcon name="chat" className="text-sm" />
           Contact Us
@@ -197,7 +197,7 @@ export function TopNavBar() {
             <Button
               variant="ghost"
               className="mt-2 w-full justify-center gap-2 bg-primary text-on-primary hover:bg-primary hover:text-on-primary hover:brightness-110 shadow-sm"
-              render={<Link to={CONTACT_ROUTE} />}
+              onClick={() => navigate(CONTACT_ROUTE)}
             >
               <MaterialIcon name="chat" className="text-sm" />
               Contact Us

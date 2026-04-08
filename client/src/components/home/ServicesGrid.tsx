@@ -95,7 +95,10 @@ export function ServicesGrid() {
   });
 
   return (
-    <section className="relative py-24 bg-primary text-on-primary overflow-hidden" id="services">
+    <section
+      className="relative py-24 bg-primary text-on-primary overflow-hidden rounded-tl-[8rem] rounded-br-[8rem] md:rounded-tl-[18rem] md:rounded-br-[18rem]"
+      id="services"
+    >
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-60"
