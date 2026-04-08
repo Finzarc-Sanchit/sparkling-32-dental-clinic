@@ -1,13 +1,13 @@
-import { Container } from '../ui/Container'
-import { SectionHeading } from './SectionHeading'
+import { Container } from '../ui/Container';
+import { SectionHeading } from './SectionHeading';
 
 type TimelineItem = {
-  year: string
-  title: string
-  description: string
-}
+  year: string;
+  title: string;
+  description: string;
+};
 
-function Timeline({ items }: { items: readonly TimelineItem[] }) {
+function Timeline({ items }: { items: readonly TimelineItem[]; }) {
   return (
     <div className="relative">
       <div className="absolute top-3 left-0 w-full h-1 bg-primary/20 hidden md:block" />
@@ -26,7 +26,7 @@ function Timeline({ items }: { items: readonly TimelineItem[] }) {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 export function AboutTimelineSection() {
@@ -60,6 +60,6 @@ export function AboutTimelineSection() {
         />
       </Container>
     </section>
-  )
+  );
 }
 

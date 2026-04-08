@@ -10,16 +10,27 @@ const CREDENTIALS = [
 
 export function DoctorProfile() {
   return (
-    <section className="py-24 bg-surface-container-low overflow-hidden" id="about">
+    <section className="relative py-24 bg-surface-container-low overflow-hidden" id="about">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-70"
+        style={{
+          backgroundImage:
+            'radial-gradient(900px 420px at 15% 15%, rgba(255,255,255,0.14), transparent 60%), radial-gradient(900px 420px at 85% 80%, rgba(255,255,255,0.10), transparent 55%)',
+        }}
+      />
       <Container>
         <div className="flex flex-col md:flex-row items-center gap-16">
           <div className="w-full md:w-1/2 relative">
             <div className="absolute -left-12 -bottom-12 w-48 h-48 bg-primary/20 rounded-full blur-3xl" />
-            <img
-              alt="Head Dentist at work"
-              className="rounded-xl shadow-2xl relative z-10 w-full aspect-[4/3] object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX8RPCGbpFescsceJg6LABMrsqxmvFhJJBaIHbEUzYaGrKe7H9SdGOdBEfC6TCOO4cPhLVtZtdRR6dQUDBwConi8rru9B4pD57q7pIu8Ow3ob6Dtx_tEiGQ1FtdEiHM2iaevPVqiHC6DvqYU5vhoCmt3bBm6jslWxjyhYtKZMqeczJ1zZaY6HkisJFuomS-S7mmt_fTRxTrq-BFfkiytp6NO_lXa1AspWgnLM3Ob7wrYQxH5qfoLfUEfwIq9wD81ZvE0CrwfYQ1c0"
-            />
+            <div className="relative z-10 overflow-hidden rounded-[2rem] shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+              <img
+                alt="Head Dentist at work"
+                className="w-full aspect-[4/3] object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX8RPCGbpFescsceJg6LABMrsqxmvFhJJBaIHbEUzYaGrKe7H9SdGOdBEfC6TCOO4cPhLVtZtdRR6dQUDBwConi8rru9B4pD57q7pIu8Ow3ob6Dtx_tEiGQ1FtdEiHM2iaevPVqiHC6DvqYU5vhoCmt3bBm6jslWxjyhYtKZMqeczJ1zZaY6HkisJFuomS-S7mmt_fTRxTrq-BFfkiytp6NO_lXa1AspWgnLM3Ob7wrYQxH5qfoLfUEfwIq9wD81ZvE0CrwfYQ1c0"
+              />
+              <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
+            </div>
           </div>
 
           <div className="w-full md:w-1/2">
@@ -30,7 +41,7 @@ export function DoctorProfile() {
               Bharati Vidyapeeth Dental College, she brings a patient-centric approach—ensuring every treatment is comfortable,
               well-explained, and tailored to individual needs.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-surface p-8 rounded-xl shadow-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-surface-container-lowest/85 p-8 rounded-3xl border border-outline-variant/25 shadow-[0_26px_50px_-38px_rgba(0,0,0,0.55)] backdrop-blur">
               {CREDENTIALS.map((c) => (
                 <div key={c.title} className="flex items-start gap-3">
                   <MaterialIcon name={c.icon} className="text-primary" />

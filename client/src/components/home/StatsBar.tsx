@@ -77,19 +77,31 @@ export function StatsBar() {
   }, [parsed, reducedMotion, started])
 
   return (
-    <div ref={hostRef} className="bg-primary text-on-primary py-8 overflow-hidden">
-      <Container className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        {STATS.map((s: Stat, i) => (
-          <div key={s.label}>
-            <div className="text-3xl md:text-4xl font-extrabold mb-1 tabular-nums">
-              {formatNumber(display[i] ?? 0, parsed[i]?.decimals ?? 0)}
-              {parsed[i]?.suffix ?? ''}
-            </div>
-            <div className="text-primary-fixed text-sm opacity-90 uppercase tracking-widest">{s.label}</div>
+    <section ref={hostRef} className="relative z-20 -mt-10 pb-6 md:-mt-16 md:pb-10">
+      <Container>
+        <div className="relative isolate overflow-hidden rounded-3xl border border-outline-variant/40 bg-surface-container-lowest shadow-[0_32px_60px_-36px_rgba(0,0,0,0.45)]">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 opacity-60"
+            style={{
+              backgroundImage:
+                'radial-gradient(700px 240px at 15% 10%, rgba(255,255,255,0.25), transparent 60%), radial-gradient(700px 240px at 85% 90%, rgba(255,255,255,0.18), transparent 55%)',
+            }}
+          />
+          <div className="relative grid grid-cols-2 gap-6 px-6 py-8 text-center md:grid-cols-4 md:gap-8 md:px-10">
+            {STATS.map((s: Stat, i) => (
+              <div key={s.label} className="space-y-1">
+                <div className="tabular-nums text-3xl font-extrabold text-on-surface md:text-4xl">
+                  {formatNumber(display[i] ?? 0, parsed[i]?.decimals ?? 0)}
+                  {parsed[i]?.suffix ?? ''}
+                </div>
+                <div className="text-sm uppercase tracking-widest text-on-surface-variant/80">{s.label}</div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </Container>
-    </div>
+    </section>
   )
 }
 

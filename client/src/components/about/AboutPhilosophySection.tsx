@@ -1,12 +1,12 @@
-import { MaterialIcon } from '../ui/MaterialIcon'
-import { Container } from '../ui/Container'
-import { SectionHeading } from './SectionHeading'
+import { MaterialIcon } from '../ui/MaterialIcon';
+import { Container } from '../ui/Container';
+import { SectionHeading } from './SectionHeading';
 
 type IconCardProps = {
-  icon: string
-  title: string
-  description: string
-}
+  icon: string;
+  title: string;
+  description: string;
+};
 
 function IconCard({ icon, title, description }: IconCardProps) {
   return (
@@ -17,7 +17,7 @@ function IconCard({ icon, title, description }: IconCardProps) {
       <h3 className="text-on-surface mb-3">{title}</h3>
       {description ? <p className="text-on-surface-variant">{description}</p> : null}
     </div>
-  )
+  );
 }
 
 export function AboutPhilosophySection() {
@@ -47,6 +47,6 @@ export function AboutPhilosophySection() {
         </div>
       </Container>
     </section>
-  )
+  );
 }
 

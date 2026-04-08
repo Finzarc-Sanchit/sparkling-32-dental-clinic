@@ -1,10 +1,10 @@
-import { Container } from '../ui/Container'
-import { MaterialIcon } from '../ui/MaterialIcon'
+import { Container } from '../ui/Container';
+import { MaterialIcon } from '../ui/MaterialIcon';
 
 type CheckItemProps = {
-  title: string
-  description: string
-}
+  title: string;
+  description: string;
+};
 
 function CheckItem({ title, description }: CheckItemProps) {
   return (
@@ -17,7 +17,7 @@ function CheckItem({ title, description }: CheckItemProps) {
         <span className="text-on-surface-variant">{description}</span>
       </div>
     </li>
-  )
+  );
 }
 
 export function AboutClinicOverviewSection() {
@@ -48,6 +48,6 @@ export function AboutClinicOverviewSection() {
         </div>
       </Container>
     </section>
-  )
+  );
 }
 

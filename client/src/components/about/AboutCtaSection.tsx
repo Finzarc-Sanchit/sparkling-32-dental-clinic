@@ -1,9 +1,9 @@
-import { Container } from '../ui/Container'
-import { MaterialIcon } from '../ui/MaterialIcon'
-import { buildWhatsAppLink } from '../../utils/whatsapp'
+import { Container } from '../ui/Container';
+import { MaterialIcon } from '../ui/MaterialIcon';
+import { buildWhatsAppLink } from '../../utils/whatsapp';
 
 export function AboutCtaSection() {
-  const whatsappLink = buildWhatsAppLink()
+  const whatsappLink = buildWhatsAppLink();
 
   return (
     <section className="py-24">
@@ -35,6 +35,6 @@ export function AboutCtaSection() {
         </div>
       </Container>
     </section>
-  )
+  );
 }
 

@@ -1,4 +1,4 @@
-import { Container } from '../ui/Container'
+import { Container } from '../ui/Container';
 
 export function AboutHeroSection() {
   return (
@@ -14,6 +14,6 @@ export function AboutHeroSection() {
         </p>
       </Container>
     </section>
-  )
+  );
 }
 

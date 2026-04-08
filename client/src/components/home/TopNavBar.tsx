@@ -1,5 +1,6 @@
 import { Container } from '../ui/Container';
 import { MaterialIcon } from '../ui/MaterialIcon';
+import { Button } from '../ui/button';
 import { buildWhatsAppLink } from '../../utils/whatsapp';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -124,13 +125,14 @@ export function TopNavBar() {
           ))}
         </div>
 
-        <a
-          className="hidden md:flex bg-tertiary text-on-tertiary px-6 py-2.5 rounded-full font-bold hover:brightness-110 active:scale-95 transition-all shadow-sm items-center gap-2"
-          href={WHATSAPP_LINK}
+        <Button
+          variant="ghost"
+          className="hidden md:inline-flex items-center gap-2 bg-tertiary text-on-tertiary hover:bg-tertiary hover:text-on-tertiary hover:brightness-110 shadow-sm"
+          render={<a href={WHATSAPP_LINK} />}
         >
           <MaterialIcon name="chat" className="text-sm" />
           WhatsApp Us
-        </a>
+        </Button>
 
         <button
           type="button"
@@ -192,13 +194,14 @@ export function TopNavBar() {
               </NavLink>
             ))}
 
-            <a
-              className="mt-2 bg-tertiary text-on-tertiary px-4 py-3 rounded-xl font-bold inline-flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all shadow-sm"
-              href={WHATSAPP_LINK}
+            <Button
+              variant="ghost"
+              className="mt-2 w-full justify-center gap-2 bg-tertiary text-on-tertiary hover:bg-tertiary hover:text-on-tertiary hover:brightness-110 shadow-sm"
+              render={<a href={WHATSAPP_LINK} />}
             >
               <MaterialIcon name="chat" className="text-sm" />
               WhatsApp Us
-            </a>
+            </Button>
           </div>
         </Container>
       </div>

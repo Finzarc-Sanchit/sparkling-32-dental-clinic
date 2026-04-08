@@ -1,4 +1,4 @@
-import { Container } from '../ui/Container'
+import { Container } from '../ui/Container';
 
 export function AboutDoctorSection() {
   return (
@@ -44,6 +44,6 @@ export function AboutDoctorSection() {
         </div>
       </Container>
     </section>
-  )
+  );
 }
 

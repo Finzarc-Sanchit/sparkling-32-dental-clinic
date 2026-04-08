@@ -1,4 +1,3 @@
-import { DoctorProfile } from '../components/home/DoctorProfile';
 import { HeroSection } from '../components/home/HeroSection';
 import { MobileWhatsAppBar } from '../components/home/MobileWhatsAppBar';
 import { NriSection } from '../components/home/NriSection';
@@ -15,7 +14,6 @@ export function HomePage() {
         <StatsBar />
         <PainPointEmpathy />
         <ServicesGrid />
-        <DoctorProfile />
         <NriSection />
         <TestimonialsSection />
       </main>

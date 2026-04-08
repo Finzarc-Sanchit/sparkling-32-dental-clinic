@@ -1,5 +1,6 @@
 import { Container } from '../ui/Container';
 import { MaterialIcon } from '../ui/MaterialIcon';
+import { Link } from 'react-router-dom';
 
 export function SiteFooter() {
   return (
@@ -7,46 +8,46 @@ export function SiteFooter() {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-16">
           <div>
-            <div className="text-2xl font-bold mb-6">Sparkling 32 Dental Clinic</div>
-            <p className="opacity-80 text-on-primary">
+            <div className="text-2xl font-medium mb-6">Sparkling 32 Dental Clinic</div>
+            <p className="opacity-80 text-on-primary text-sm">
               Sparkling 32 Dental Clinic is a modern dental care center in Mumbai offering a complete range of treatments—from
               routine dental care to advanced cosmetic procedures.
             </p>
           </div>
 
           <div>
-            <h6 className="font-bold mb-6 text-primary-fixed uppercase tracking-widest text-xs">Quick Links</h6>
+            <h6 className="font-medium mb-6 text-primary-fixed uppercase tracking-widest text-xs">Quick Links</h6>
             <ul className="space-y-3 text-sm">
               <li>
-                <a className="opacity-80 hover:opacity-100 transition-opacity" href="#home">
+                <Link className="opacity-80 hover:opacity-100 transition-opacity" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="opacity-80 hover:opacity-100 transition-opacity" href="#services">
+                <Link className="opacity-80 hover:opacity-100 transition-opacity" to="/#services">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="opacity-80 hover:opacity-100 transition-opacity" href="#about">
+                <Link className="opacity-80 hover:opacity-100 transition-opacity" to="/about">
                   About Dr.
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="opacity-80 hover:opacity-100 transition-opacity" href="#nri">
+                <Link className="opacity-80 hover:opacity-100 transition-opacity" to="/nri-patients">
                   NRI Patients
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="opacity-80 hover:opacity-100 transition-opacity" href="#contact">
+                <Link className="opacity-80 hover:opacity-100 transition-opacity" to="/contact">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h6 className="font-bold mb-6 text-primary-fixed uppercase tracking-widest text-xs">Top Services</h6>
+            <h6 className="font-medium mb-6 text-primary-fixed uppercase tracking-widest text-xs">Top Services</h6>
             <ul className="space-y-3 text-sm">
               <li>
                 <a className="opacity-80 hover:opacity-100 transition-opacity" href="#">
@@ -77,7 +78,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h6 className="font-bold mb-6 text-primary-fixed uppercase tracking-widest text-xs">Contact Us</h6>
+            <h6 className="font-medium mb-6 text-primary-fixed uppercase tracking-widest text-xs">Contact Us</h6>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MaterialIcon name="location_on" className="text-primary-fixed text-lg" />
