@@ -24,7 +24,7 @@ export function ContactHeaderSection() {
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 pt-4">
           <a
-            className="w-full md:w-auto bg-tertiary text-on-tertiary px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:brightness-110 transition-all active:scale-95"
+            className="w-full md:w-auto bg-primary text-on-primary px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:brightness-110 transition-all active:scale-95"
             href={whatsappLink}
           >
             <MaterialIcon name="chat" />

@@ -1,5 +1,4 @@
 import { HeroSection } from '../components/home/HeroSection';
-import { MobileWhatsAppBar } from '../components/home/MobileWhatsAppBar';
 import { NriSection } from '../components/home/NriSection';
 import { PainPointEmpathy } from '../components/home/PainPointEmpathy';
 import { ServicesGrid } from '../components/home/ServicesGrid';
@@ -17,7 +16,6 @@ export function HomePage() {
         <NriSection />
         <TestimonialsSection />
       </main>
-      <MobileWhatsAppBar />
     </div>
   );
 }

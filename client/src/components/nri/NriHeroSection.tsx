@@ -1,10 +1,9 @@
 import { Container } from '../ui/Container'
 import { MaterialIcon } from '../ui/MaterialIcon'
-import { buildWhatsAppLink } from '../../utils/whatsapp'
 import { motion, useReducedMotion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 export function NriHeroSection() {
-  const whatsappLink = buildWhatsAppLink()
   const reduce = useReducedMotion()
 
   const textWrap = reduce
@@ -55,13 +54,13 @@ export function NriHeroSection() {
           </motion.p>
 
           <motion.div variants={textItem} transition={textEase} className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-12">
-            <a
-              className="px-8 py-4 bg-tertiary text-on-tertiary font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg hover:brightness-110 active:scale-95 transition-all"
-              href={whatsappLink}
+            <Link
+              className="px-8 py-4 bg-primary text-on-primary font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg hover:brightness-110 active:scale-95 transition-all"
+              to="/contact"
             >
               <MaterialIcon name="chat" filled />
-              Start on WhatsApp
-            </a>
+              Contact Us
+            </Link>
             <a
               className="px-8 py-4 border-2 border-primary text-primary font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/5 active:scale-95 transition-all"
               href="#nri-plan"

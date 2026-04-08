@@ -1,5 +1,6 @@
 import { Container } from '../ui/Container';
 import { MaterialIcon } from '../ui/MaterialIcon';
+import { Reveal } from '../ui/Reveal';
 import dentalImplants from '@/assets/services/dental-implant.jpg';
 import rootCanalTreatment from '@/assets/services/root-canal.jpg';
 import smileMakeoverVeneers from '@/assets/services/smile-makeover.jpg';
@@ -61,27 +62,29 @@ function ServiceBlock({ i, service }: { i: number; service: Service; }) {
   const imageOrderMd = imageFirstDesktop ? 'md:order-1' : 'md:order-2';
 
   return (
-    <article className="group flex flex-col pb-14">
-      <div className="text-sm tracking-widest text-on-primary/70">{n}</div>
+    <Reveal variant="slide-up-lg" delay={0.06 * i}>
+      <article className="group flex flex-col pb-14">
+        <div className="text-sm tracking-widest text-on-primary/70">{n}</div>
 
-      <div className="mt-3 flex flex-col gap-8">
-        <div className={`space-y-3 ${textOrder} ${textOrderMd}`}>
-          <h3 className="text-on-primary font-medium underline-offset-4 decoration-white/35 group-hover:underline">
-            {service.title}
-          </h3>
-          <p className="text-on-primary/80">{service.desc}</p>
-        </div>
+        <div className="mt-3 flex flex-col gap-8">
+          <div className={`space-y-3 ${textOrder} ${textOrderMd}`}>
+            <h3 className="text-on-primary font-medium underline-offset-4 decoration-white/35 group-hover:underline">
+              {service.title}
+            </h3>
+            <p className="text-on-primary/80">{service.desc}</p>
+          </div>
 
-        <div className={`overflow-hidden rounded-xl ring-1 ring-white/10 ${imageOrder} ${imageOrderMd}`}>
-          <img
-            alt={service.title}
-            className="aspect-[4/3] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-            loading="lazy"
-            src={service.image}
-          />
+          <div className={`overflow-hidden rounded-xl ring-1 ring-white/10 ${imageOrder} ${imageOrderMd}`}>
+            <img
+              alt={service.title}
+              className="aspect-[4/3] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+              loading="lazy"
+              src={service.image}
+            />
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </Reveal>
   );
 }
 
@@ -102,17 +105,19 @@ export function ServicesGrid() {
         }}
       />
       <Container>
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
-            <h2 className="mb-4">Dental Services at Sparkling 32</h2>
-            <p className="text-on-primary/80">
-              A complete range of treatments—from routine dental care to advanced cosmetic procedures.
-            </p>
+        <Reveal>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+              <h2 className="mb-4">Dental Services at Sparkling 32</h2>
+              <p className="text-on-primary/80">
+                A complete range of treatments—from routine dental care to advanced cosmetic procedures.
+              </p>
+            </div>
+            <a className="text-on-primary font-bold flex items-center gap-2 hover:gap-3 transition-all" href="#contact">
+              View All Services <MaterialIcon name="arrow_forward" />
+            </a>
           </div>
-          <a className="text-on-primary font-bold flex items-center gap-2 hover:gap-3 transition-all" href="#contact">
-            View All Services <MaterialIcon name="arrow_forward" />
-          </a>
-        </div>
+        </Reveal>
 
         {/* Mobile: strictly sequential (01 → 06) */}
         <div className="md:hidden pt-10">

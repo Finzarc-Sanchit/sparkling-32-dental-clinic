@@ -1,6 +1,6 @@
 import { Container } from '../ui/Container'
 import { MaterialIcon } from '../ui/MaterialIcon'
-import { buildWhatsAppLink } from '../../utils/whatsapp'
+import { Link } from 'react-router-dom'
 
 const PHONE_E164 = '+919898968686'
 
@@ -12,8 +12,6 @@ const BADGES = [
 ] as const
 
 export function RctHeroSection() {
-  const whatsappLink = buildWhatsAppLink()
-
   return (
     <section className="relative overflow-hidden bg-surface py-20 lg:py-32">
       <Container className="grid lg:grid-cols-2 gap-12 items-center">
@@ -29,12 +27,12 @@ export function RctHeroSection() {
           </p>
 
           <div className="flex flex-wrap gap-4 mb-12">
-            <a
-              className="bg-tertiary text-on-tertiary px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:brightness-110 transition-all active:scale-95"
-              href={whatsappLink}
+            <Link
+              className="bg-primary text-on-primary px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:brightness-110 transition-all active:scale-95"
+              to="/contact"
             >
-              Book Consultation for RCT
-            </a>
+              Contact Us
+            </Link>
             <a
               className="border-2 border-primary text-primary px-8 py-4 rounded-full text-lg font-bold hover:bg-primary hover:text-on-primary transition-all active:scale-95"
               href={`tel:${PHONE_E164}`}

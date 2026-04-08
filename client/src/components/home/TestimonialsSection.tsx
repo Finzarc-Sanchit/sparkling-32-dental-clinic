@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Container } from '../ui/Container';
 import { MaterialIcon } from '../ui/MaterialIcon';
+import { Reveal } from '../ui/Reveal';
 
 const TESTIMONIALS = [
   {
@@ -137,7 +138,9 @@ export function TestimonialsSection() {
         }}
       />
       <Container>
-        <h2 className="text-center mb-16">Patients from 30+ countries trust us</h2>
+        <Reveal variant="fade">
+          <h2 className="text-center mb-16">Patients from 30+ countries trust us</h2>
+        </Reveal>
 
         <div className="relative">
           <div className="sr-only" aria-live="polite">
@@ -163,49 +166,57 @@ export function TestimonialsSection() {
             </button>
           </div>
 
-          <div ref={scrollerRef} className="flex overflow-x-auto gap-8 pb-12 snap-x no-scrollbar">
-          {TESTIMONIALS.map((t) => (
-            <div
-              key={t.name}
-              className={
-                t.featured
-                  ? 'min-w-[320px] md:min-w-[400px] snap-center bg-primary text-on-primary p-8 rounded-3xl shadow-[0_32px_60px_-44px_rgba(0,0,0,0.65)]'
-                  : 'min-w-[320px] md:min-w-[400px] snap-center bg-surface-container-lowest/85 p-8 rounded-3xl border border-outline-variant/20 shadow-[0_22px_44px_-36px_rgba(0,0,0,0.55)] backdrop-blur'
-              }
-            >
-              <div className="flex justify-between items-start mb-6">
-                <div>
-                  <div className="font-bold text-lg">{t.name}</div>
-                  <div className={t.featured ? 'text-primary-fixed text-sm font-semibold' : 'text-primary text-sm font-semibold'}>
-                    {t.treatment}
+          <Reveal variant="slide-up" delay={0.05}>
+            <div ref={scrollerRef} className="flex overflow-x-auto gap-8 pb-12 snap-x no-scrollbar">
+              {TESTIMONIALS.map((t) => (
+                <div
+                  key={t.name}
+                  className={
+                    t.featured
+                      ? 'min-w-[320px] md:min-w-[400px] snap-center bg-primary text-on-primary p-8 rounded-3xl shadow-[0_32px_60px_-44px_rgba(0,0,0,0.65)]'
+                      : 'min-w-[320px] md:min-w-[400px] snap-center bg-surface-container-lowest/85 p-8 rounded-3xl border border-outline-variant/20 shadow-[0_22px_44px_-36px_rgba(0,0,0,0.55)] backdrop-blur'
+                  }
+                >
+                  <div className="flex justify-between items-start mb-6">
+                    <div>
+                      <div className="font-bold text-lg">{t.name}</div>
+                      <div
+                        className={
+                          t.featured ? 'text-primary-fixed text-sm font-semibold' : 'text-primary text-sm font-semibold'
+                        }
+                      >
+                        {t.treatment}
+                      </div>
+                    </div>
+                    <div className={t.featured ? 'text-primary-fixed' : 'text-tertiary'}>{t.stars}</div>
                   </div>
+                  <p className={t.featured ? 'text-white italic mb-4' : 'text-on-surface-variant italic mb-4'}>
+                    {t.quote}
+                  </p>
                 </div>
-                <div className={t.featured ? 'text-primary-fixed' : 'text-tertiary'}>{t.stars}</div>
-              </div>
-              <p className={t.featured ? 'text-white italic mb-4' : 'text-on-surface-variant italic mb-4'}>
-                {t.quote}
-              </p>
+              ))}
             </div>
-          ))}
-          </div>
+          </Reveal>
         </div>
 
-        <div className="mt-16 max-w-5xl mx-auto rounded-[2rem] overflow-hidden relative group aspect-video shadow-2xl">
-          <img
-            alt="Clinic Interior Video Placeholder"
-            className="w-full h-full object-cover"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDq0qGL3FjdI8UJQ3QUpVMMxsE00fEfMrcOiqf0xAvQHJlq56hTsdfi1sHeocFc9PkJaFuMI2zzSq0M-b016xRa0cGu-Dk-3FrpUC41VQH8Jt470SlaayPOMbN1sEnFSQRpu4hDNSu4FpCcUCNsZH3AS-8sbemxur1w3zLgTyghA8-At_EB8EpUcQJi7kibDqDgVFy0uZ4AisZr05tkG9j1XOwRAQAYiMEgWRD5ZKugb__p7f2Z064v8uE1kDBzorx-uhvvKUdf-0"
-          />
-          <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-all cursor-pointer">
-            <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-primary shadow-2xl active:scale-90 transition-transform">
-              <MaterialIcon name="play_arrow" filled className="text-4xl" />
+        <Reveal variant="scale" delay={0.08}>
+          <div className="mt-16 max-w-5xl mx-auto rounded-[2rem] overflow-hidden relative group aspect-video shadow-2xl">
+            <img
+              alt="Clinic Interior Video Placeholder"
+              className="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDq0qGL3FjdI8UJQ3QUpVMMxsE00fEfMrcOiqf0xAvQHJlq56hTsdfi1sHeocFc9PkJaFuMI2zzSq0M-b016xRa0cGu-Dk-3FrpUC41VQH8Jt470SlaayPOMbN1sEnFSQRpu4hDNSu4FpCcUCNsZH3AS-8sbemxur1w3zLgTyghA8-At_EB8EpUcQJi7kibDqDgVFy0uZ4AisZr05tkG9j1XOwRAQAYiMEgWRD5ZKugb__p7f2Z064v8uE1kDBzorx-uhvvKUdf-0"
+            />
+            <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-all cursor-pointer">
+              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-primary shadow-2xl active:scale-90 transition-transform">
+                <MaterialIcon name="play_arrow" filled className="text-4xl" />
+              </div>
+            </div>
+            <div className="absolute bottom-6 left-6 text-white">
+              <div className="font-bold text-lg">Video Testimonial</div>
+              <div className="text-sm opacity-80">"My experience as an NRI patient"</div>
             </div>
           </div>
-          <div className="absolute bottom-6 left-6 text-white">
-            <div className="font-bold text-lg">Video Testimonial</div>
-            <div className="text-sm opacity-80">"My experience as an NRI patient"</div>
-          </div>
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

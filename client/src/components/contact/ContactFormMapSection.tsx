@@ -167,7 +167,7 @@ export function ContactFormMapSection() {
             </div>
 
             <button
-              className="w-full bg-tertiary text-on-tertiary py-5 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:brightness-110 transition-all shadow-lg active:scale-[0.98]"
+              className="w-full bg-primary text-on-primary py-5 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:brightness-110 transition-all shadow-lg active:scale-[0.98]"
               type="submit"
             >
               Get My Treatment Plan

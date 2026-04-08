@@ -3,6 +3,7 @@ import { Outlet, Route, Routes } from 'react-router-dom'
 import { SiteFooter } from './components/home/SiteFooter';
 import { TopNavBar } from './components/home/TopNavBar';
 import ScrollToTop from './components/ScrollToTop';
+import { FloatingWhatsApp } from './components/ui/FloatingWhatsApp'
 import Lenis from 'lenis';
 import { AboutPage } from './pages/AboutPage'
 import { ContactPage } from './pages/ContactPage'
@@ -38,6 +39,7 @@ function AppLayout() {
         <Outlet />
       </div>
       <SiteFooter />
+      <FloatingWhatsApp />
     </div>
   );
 }

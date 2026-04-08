@@ -19,7 +19,7 @@ export function ContactNriCalloutSection() {
         </p>
         <div className="pt-4">
           <a
-            className="bg-tertiary text-on-tertiary px-10 py-4 rounded-xl font-bold inline-flex items-center gap-2 hover:brightness-110 transition-all active:scale-95 shadow-md"
+            className="bg-primary text-on-primary px-10 py-4 rounded-xl font-bold inline-flex items-center gap-2 hover:brightness-110 transition-all active:scale-95 shadow-md"
             href={whatsappLink}
           >
             <MaterialIcon name="chat" />

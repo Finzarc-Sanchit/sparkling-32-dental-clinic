@@ -1,10 +1,8 @@
 import { Container } from '../ui/Container';
 import { MaterialIcon } from '../ui/MaterialIcon';
-import { buildWhatsAppLink } from '../../utils/whatsapp';
+import { Link } from 'react-router-dom';
 
 export function UsHeroSection() {
-  const whatsappLink = buildWhatsAppLink();
-
   return (
     <section className="relative pt-20 pb-32 overflow-hidden bg-surface">
       <Container className="grid lg:grid-cols-2 gap-16 items-center">
@@ -26,13 +24,13 @@ export function UsHeroSection() {
           </p>
 
           <div className="flex flex-wrap gap-4 mb-12">
-            <a
-              className="bg-tertiary hover:brightness-110 text-on-tertiary px-8 py-4 rounded-xl font-bold transition-all shadow-lg flex items-center gap-2 active:scale-95"
-              href={whatsappLink}
+            <Link
+              className="bg-primary hover:brightness-110 text-on-primary px-8 py-4 rounded-xl font-bold transition-all shadow-lg flex items-center gap-2 active:scale-95"
+              to="/contact"
             >
               <MaterialIcon name="chat" />
-              WhatsApp Us Now
-            </a>
+              Contact Us
+            </Link>
             <a
               className="border-2 border-primary text-primary hover:bg-primary-container hover:text-on-primary px-8 py-4 rounded-xl font-bold transition-all active:scale-95"
               href="#cost"

@@ -1,7 +1,7 @@
 import { Container } from '../ui/Container'
 import { MaterialIcon } from '../ui/MaterialIcon'
-import { useMemo, useState } from 'react'
-import { DEFAULT_WHATSAPP_MESSAGE, buildWhatsAppLink } from '../../utils/whatsapp'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export function ContactSection() {
   const [name, setName] = useState('')
@@ -9,22 +9,6 @@ export function ContactSection() {
   const [treatmentNeeded, setTreatmentNeeded] = useState('')
   const [preferredContact, setPreferredContact] = useState<'WhatsApp' | 'Call'>('WhatsApp')
   const [hasReports, setHasReports] = useState(false)
-
-  const whatsappLink = useMemo(() => {
-    const base = DEFAULT_WHATSAPP_MESSAGE
-    const details = [
-      name ? `Name: ${name}` : null,
-      country ? `Country: ${country}` : null,
-      treatmentNeeded ? `Treatment needed: ${treatmentNeeded}` : null,
-      preferredContact ? `Preferred contact: ${preferredContact}` : null,
-      hasReports ? 'I have reports to share.' : null,
-    ]
-      .filter(Boolean)
-      .join('\n')
-
-    const message = details ? `${base}\n\n${details}` : base
-    return buildWhatsAppLink({ message })
-  }, [country, hasReports, name, preferredContact, treatmentNeeded])
 
   return (
     <section className="py-24 bg-surface" id="contact">
@@ -36,13 +20,13 @@ export function ContactSection() {
           </p>
 
           <div className="space-y-4 mb-10">
-            <a
-              className="w-full bg-tertiary text-on-tertiary p-5 rounded-xl font-bold flex items-center justify-center gap-3 shadow-lg hover:brightness-110 active:scale-98 transition-all"
-              href={whatsappLink}
+            <Link
+              className="w-full bg-primary text-on-primary p-5 rounded-xl font-bold flex items-center justify-center gap-3 shadow-lg hover:brightness-110 active:scale-98 transition-all"
+              to="/contact"
             >
               <MaterialIcon name="chat" />
-              WhatsApp Us Now
-            </a>
+              Contact Us
+            </Link>
             <a
               className="w-full border-2 border-primary text-primary p-5 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-primary/5 active:scale-98 transition-all"
               href="tel:+91XXXXXXXXXX"
@@ -56,7 +40,7 @@ export function ContactSection() {
             className="p-6 bg-surface-container-low rounded-xl space-y-4"
             onSubmit={(e) => {
               e.preventDefault()
-              window.open(whatsappLink, '_blank', 'noopener,noreferrer')
+              window.location.href = '/contact'
             }}
           >
             <div className="font-bold text-on-surface mb-1">Send your details</div>
@@ -118,7 +102,7 @@ export function ContactSection() {
               type="submit"
               className="w-full bg-primary text-on-primary p-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:brightness-110 active:scale-98 transition-all"
             >
-              Send on WhatsApp <MaterialIcon name="open_in_new" className="text-sm" />
+              Contact Us <MaterialIcon name="open_in_new" className="text-sm" />
             </button>
           </form>
 

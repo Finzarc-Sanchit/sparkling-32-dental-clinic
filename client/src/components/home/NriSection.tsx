@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Container } from '../ui/Container';
 import { MaterialIcon } from '../ui/MaterialIcon';
 import { buildWhatsAppLink } from '../../utils/whatsapp';
+import { Reveal } from '../ui/Reveal';
 
 type CurrencyCode = 'INR' | 'USD' | 'GBP' | 'AED';
 
@@ -128,106 +129,108 @@ export function NriSection() {
         }}
       />
       <Container>
-        <div className="text-center mb-16">
+        <Reveal variant="scale" className="text-center mb-16">
           <h2 className="mb-4">Dental Treatment in India for NRI Patients</h2>
           <p className="text-on-surface-variant max-w-3xl mx-auto">
             Quality care. Transparent pricing. Planned convenience.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-24">
           {STEPS.map((s) => (
-            <div
-              key={s.n}
-              className="text-center p-6 bg-surface-container-lowest/85 rounded-3xl border border-outline-variant/20 shadow-[0_18px_40px_-32px_rgba(0,0,0,0.55)] backdrop-blur relative"
-            >
-              <div className="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
-                {s.n}
+            <Reveal key={s.n} variant="slide-up" delay={0.03 * s.n}>
+              <div className="text-center p-6 bg-surface-container-lowest/85 rounded-3xl border border-outline-variant/20 shadow-[0_18px_40px_-32px_rgba(0,0,0,0.55)] backdrop-blur relative">
+                <div className="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
+                  {s.n}
+                </div>
+                <h5 className="font-bold mb-2">{s.title}</h5>
+                <p className="text-on-surface-variant">{s.desc}</p>
               </div>
-              <h5 className="font-bold mb-2">{s.title}</h5>
-              <p className="text-on-surface-variant">{s.desc}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 overflow-x-hidden pb-12">
           <div className="min-w-0">
-            <div className="mb-5">
+            <Reveal variant="fade" className="mb-5">
               <h2 className="font-medium">Choose your treatment</h2>
-            </div>
+            </Reveal>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {TREATMENTS.map((t) => {
                 const isActiveRow = t.id === treatmentId;
                 return (
-                  <button
-                    key={t.id}
-                    type="button"
-                    onClick={() => setTreatmentId(t.id)}
-                    className={[
-                      'cursor-default',
-                      'w-full rounded-2xl border px-6 py-5 text-left transition-all duration-300 ease-out',
-                      isActiveRow
-                        ? 'border-primary bg-primary text-on-primary'
-                        : 'border-outline-variant/25 bg-surface-container-lowest/85 text-on-surface hover:bg-surface-container-lowest hover:border-outline-variant/35',
-                    ].join(' ')}
-                  >
-                    <div className="font-bold">{t.name}</div>
-                  </button>
+                  <Reveal key={t.id} variant="scale" delay={0.02}>
+                    <button
+                      type="button"
+                      onClick={() => setTreatmentId(t.id)}
+                      className={[
+                        'cursor-default',
+                        'w-full rounded-2xl border px-6 py-5 text-left transition-all duration-300 ease-out',
+                        isActiveRow
+                          ? 'border-primary bg-primary text-on-primary'
+                          : 'border-outline-variant/25 bg-surface-container-lowest/85 text-on-surface hover:bg-surface-container-lowest hover:border-outline-variant/35',
+                      ].join(' ')}
+                    >
+                      <div className="font-bold">{t.name}</div>
+                    </button>
+                  </Reveal>
                 );
               })}
             </div>
           </div>
 
           <div className="min-w-0">
-            <div className="bg-surface-container-lowest/85 border border-outline-variant/25 p-8 rounded-3xl shadow-[0_32px_60px_-44px_rgba(0,0,0,0.65)] backdrop-blur sticky top-24 w-full max-w-full">
-              <div className="flex items-start justify-between gap-4 mb-6">
-                <div className="min-w-0">
-                  <p className="text-on-surface-variant mt-1">
-                    Estimates update using live exchange rates when available.
-                  </p>
+            <Reveal variant="slide-left">
+              <div className="bg-surface-container-lowest/85 border border-outline-variant/25 p-8 rounded-3xl shadow-[0_32px_60px_-44px_rgba(0,0,0,0.65)] backdrop-blur sticky top-24 w-full max-w-full">
+                <div className="flex items-start justify-between gap-4 mb-6">
+                  <div className="min-w-0">
+                    <p className="text-on-surface-variant mt-1">
+                      Estimates update using live exchange rates when available.
+                    </p>
+                  </div>
+
+                  <label className="shrink-0 text-right">
+                    <div className="text-xs uppercase tracking-wider text-on-surface-variant mb-2">Currency</div>
+                    <select
+                      value={active}
+                      onChange={(e) => setActive(e.target.value as CurrencyCode)}
+                      className="h-10 rounded-full border border-outline bg-transparent px-4 text-sm font-bold text-on-surface outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    >
+                      <option value="INR">INR</option>
+                      <option value="USD">USD</option>
+                      <option value="GBP">GBP</option>
+                      <option value="AED">AED</option>
+                    </select>
+                  </label>
                 </div>
 
-                <label className="shrink-0 text-right">
-                  <div className="text-xs uppercase tracking-wider text-on-surface-variant mb-2">Currency</div>
-                  <select
-                    value={active}
-                    onChange={(e) => setActive(e.target.value as CurrencyCode)}
-                    className="h-10 rounded-full border border-outline bg-transparent px-4 text-sm font-bold text-on-surface outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                <div className="bg-primary/5 p-6 rounded-xl text-center mb-6">
+                  <div className="text-sm text-primary font-bold uppercase mb-2">{selectedTreatment.name}</div>
+                  {hasPricing ? (
+                    <div className="text-4xl font-extrabold text-on-surface mb-1">{formatter.format(convertedAvg)}</div>
+                  ) : (
+                    <div className="text-2xl font-extrabold text-on-surface mb-1">Pricing on request</div>
+                  )}
+                  <div className="text-sm text-on-surface-variant">{displayLabel}</div>
+                </div>
+
+                <p className="text-[10px] text-center text-on-surface-variant opacity-70">
+                  Rates are approximate. Final cost confirmed at consultation. Last updated: <span>{lastUpdate}</span>
+                </p>
+
+                <div className="mt-8 text-center">
+                  <a
+                    className="bg-primary text-on-primary px-10 py-5 rounded-full font-bold inline-flex items-center justify-center gap-3 hover:brightness-110 hover:scale-100 active:scale-100 transition-all shadow-xl text-lg w-full max-w-full flex-wrap text-center sm:w-auto"
+                    href={WHATSAPP_LINK}
                   >
-                    <option value="INR">INR</option>
-                    <option value="USD">USD</option>
-                    <option value="GBP">GBP</option>
-                    <option value="AED">AED</option>
-                  </select>
-                </label>
+                    <span className="sm:hidden">Get Your Treatment Plan</span>
+                    <span className="hidden sm:inline">Get Your Treatment Plan Before You Travel</span>
+                    <MaterialIcon name="chat" />
+                  </a>
+                </div>
               </div>
-
-              <div className="bg-primary/5 p-6 rounded-xl text-center mb-6">
-                <div className="text-sm text-primary font-bold uppercase mb-2">{selectedTreatment.name}</div>
-                {hasPricing ? (
-                  <div className="text-4xl font-extrabold text-on-surface mb-1">{formatter.format(convertedAvg)}</div>
-                ) : (
-                  <div className="text-2xl font-extrabold text-on-surface mb-1">Pricing on request</div>
-                )}
-                <div className="text-sm text-on-surface-variant">{displayLabel}</div>
-              </div>
-
-              <p className="text-[10px] text-center text-on-surface-variant opacity-70">
-                Rates are approximate. Final cost confirmed at consultation. Last updated: <span>{lastUpdate}</span>
-              </p>
-
-              <div className="mt-8 text-center">
-                <a
-                  className="bg-tertiary text-on-tertiary px-10 py-5 rounded-full font-bold inline-flex items-center justify-center gap-3 hover:brightness-110 hover:scale-100 active:scale-100 transition-all shadow-xl text-lg w-full max-w-full flex-wrap text-center sm:w-auto"
-                  href={WHATSAPP_LINK}
-                >
-                  <span className="sm:hidden">Get Your Treatment Plan</span>
-                  <span className="hidden sm:inline">Get Your Treatment Plan Before You Travel</span>
-                  <MaterialIcon name="chat" />
-                </a>
-              </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </Container>
