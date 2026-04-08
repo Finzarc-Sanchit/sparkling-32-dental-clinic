@@ -1,5 +1,6 @@
 import { ArrowUpRight } from 'lucide-react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import heroBg from '@/assets/benyamin-bohlouli-e7MJLM5VGjY-unsplash.jpg';
@@ -16,6 +17,12 @@ const PATIENT_AVATARS = [
 
 export default function AeroHero2() {
   const reduce = useReducedMotion();
+  const parallaxRef = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: parallaxRef,
+    offset: ['start end', 'end start'],
+  });
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '10%']);
 
   return (
     <section
@@ -33,13 +40,16 @@ export default function AeroHero2() {
         style={{ position: 'absolute', width: 1, height: 1, opacity: 0, pointerEvents: 'none' }}
       />
 
-      <div
-        className="absolute inset-0 h-full bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${HERO_BG})`,
-          backgroundPosition: 'center bottom',
-        }}
-      >
+      <div ref={parallaxRef} className="absolute inset-0 h-full overflow-hidden">
+        <motion.div
+          aria-hidden
+          className="absolute -inset-x-0 -inset-y-[12vh] bg-cover bg-center will-change-transform"
+          style={{
+            y: reduce ? undefined : bgY,
+            backgroundImage: `url(${HERO_BG})`,
+            backgroundPosition: 'center bottom',
+          }}
+        />
         <div
           aria-hidden
           className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10"
@@ -123,7 +133,7 @@ export default function AeroHero2() {
               transition={{ duration: 0.65, ease: [0.2, 0.8, 0.2, 1], delay: 0.22 }}
             >
               <Link
-                className="group mx-auto flex w-full cursor-pointer items-center justify-center gap-0 rounded-full border-none bg-transparent px-0 py-1 font-normal shadow-none sm:mx-0 sm:w-fit sm:py-5"
+                className="group mx-0 flex w-full cursor-pointer items-center justify-start gap-0 rounded-full border-none bg-transparent px-0 py-1 font-normal shadow-none sm:w-fit sm:py-5"
                 to="/contact"
               >
                 <span className="rounded-full bg-primary-fixed px-6 py-3 text-on-primary-fixed duration-500 ease-in-out group-hover:bg-on-surface group-hover:text-primary-fixed">
