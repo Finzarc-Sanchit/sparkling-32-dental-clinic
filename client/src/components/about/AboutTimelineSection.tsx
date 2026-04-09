@@ -1,5 +1,6 @@
 import { Container } from '../ui/Container';
 import { SectionHeading } from './SectionHeading';
+import { motion, useReducedMotion } from 'framer-motion';
 
 type TimelineItem = {
   year: string;
@@ -8,21 +9,29 @@ type TimelineItem = {
 };
 
 function Timeline({ items }: { items: readonly TimelineItem[]; }) {
+  const reduce = useReducedMotion();
   return (
     <div className="relative">
       <div className="absolute top-3 left-0 w-full h-1 bg-primary/20 hidden md:block" />
       <div className="absolute top-0 left-3 w-1 h-full bg-primary/20 block md:hidden" />
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
-        {items.map((it) => (
-          <div key={it.year} className="flex flex-row md:flex-col items-center gap-6 md:gap-4 group">
+        {items.map((it, i) => (
+          <motion.div
+            key={it.year}
+            className="flex flex-row md:flex-col items-center gap-6 md:gap-4 group"
+            initial={reduce ? false : { opacity: 0, y: 14 }}
+            whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+            viewport={reduce ? undefined : { once: true, amount: 0.35 }}
+            transition={reduce ? undefined : { duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: i * 0.05 }}
+          >
             <div className="w-6 h-6 rounded-full bg-primary ring-8 ring-background group-hover:scale-125 transition-transform shrink-0" />
             <div className="md:text-center">
               <span className="block text-2xl font-bold text-primary mb-1">{it.year}</span>
               <h4 className="font-bold text-on-surface mb-2">{it.title}</h4>
               <p className="text-on-surface-variant">{it.description}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

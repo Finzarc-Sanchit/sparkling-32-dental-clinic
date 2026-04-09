@@ -1,52 +1,49 @@
 import { Container } from '../ui/Container'
-import { MaterialIcon } from '../ui/MaterialIcon'
 import { NriSectionHeading } from './NriSectionHeading'
 
-type Card = { icon: string; title: string; description: string }
+import affordableDentalCareImg from '@/assets/nri-page/affordable-dental-care-with-quality-assurance.webp'
+import advancedStandardsImg from '@/assets/nri-page/advanced-dental-care-standards-illustration.webp'
+import efficientSchedulingImg from '@/assets/nri-page/efficient-scheduling-with-minimal-wait.webp'
+import globalHealthcareImg from '@/assets/nri-page/global-healthcare-for-international-patients.webp'
 
-const CARDS: readonly Card[] = [
+const WHY_IMAGES = [
   {
-    icon: 'payments',
-    title: 'High-quality dental treatments at affordable costs',
-    description: '',
+    src: affordableDentalCareImg,
+    alt: 'High-quality dental treatments at affordable costs',
   },
   {
-    icon: 'verified',
-    title: 'Advanced equipment and hygiene standards',
-    description: '',
+    src: advancedStandardsImg,
+    alt: 'Advanced equipment and hygiene standards',
   },
   {
-    icon: 'schedule',
-    title: 'Efficient scheduling with minimal waiting time',
-    description: '',
+    src: efficientSchedulingImg,
+    alt: 'Efficient scheduling with minimal waiting time',
   },
   {
-    icon: 'forum',
-    title: 'Comfortable experience for international patients',
-    description: '',
+    src: globalHealthcareImg,
+    alt: 'Comfortable experience for international patients',
   },
 ] as const
-
-function WhyCard({ icon, title, description }: Card) {
-  return (
-    <div className="bg-surface-container-lowest p-8 rounded-xl shadow-sm border-l-4 border-primary hover:shadow-md transition-all">
-      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6 text-primary">
-        <MaterialIcon name={icon} className="text-3xl text-primary" />
-      </div>
-      <h3 className="mb-3">{title}</h3>
-      {description ? <p className="text-on-surface-variant">{description}</p> : null}
-    </div>
-  )
-}
 
 export function NriWhyChooseSection() {
   return (
     <section className="py-24 bg-surface">
       <Container>
         <NriSectionHeading title="Why NRIs Choose Us" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {CARDS.map((c) => (
-            <WhyCard key={c.title} {...c} />
+        <div className="grid grid-cols-2 gap-4 md:mx-auto md:w-max md:grid-cols-4 md:gap-6">
+          {WHY_IMAGES.map((it) => (
+            <div
+              key={it.alt}
+              className="w-full max-w-[min(100%,12rem)] overflow-hidden rounded-2xl bg-surface-container-lowest ring-1 ring-outline-variant/20 md:h-[17rem] md:w-[20rem] md:max-w-none"
+            >
+              <img
+                alt={it.alt}
+                className="h-full w-full object-cover"
+                decoding="async"
+                loading="lazy"
+                src={it.src}
+              />
+            </div>
           ))}
         </div>
       </Container>

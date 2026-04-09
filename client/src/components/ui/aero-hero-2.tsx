@@ -6,6 +6,9 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import heroBg from '@/assets/benyamin-bohlouli-e7MJLM5VGjY-unsplash.jpg';
 import { Link } from 'react-router-dom';
 
+/** Increments on every `AeroHero2` mount; used to skip intro on React 18 Strict Mode’s dev-only remount (even mounts). */
+let homeHeroMountSeq = 0;
+
 const HERO_BG = heroBg;
 
 const PATIENT_AVATARS = [
@@ -17,6 +20,14 @@ const PATIENT_AVATARS = [
 
 export default function AeroHero2() {
   const reduce = useReducedMotion();
+  const mountSeqRef = useRef(0);
+  if (mountSeqRef.current === 0) {
+    homeHeroMountSeq += 1;
+    mountSeqRef.current = homeHeroMountSeq;
+  }
+  /** Odd mount index = real first paint or SPA return; even = Strict Mode’s immediate remount in dev. */
+  const playHomeIntro = mountSeqRef.current % 2 === 1;
+
   const parallaxRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: parallaxRef,
@@ -69,7 +80,9 @@ export default function AeroHero2() {
           <div className="max-w-3xl space-y-6">
             <motion.h1
               className="text-white"
-              initial={reduce ? undefined : { opacity: 0, y: 18 }}
+              initial={
+                reduce ? undefined : playHomeIntro ? { opacity: 0, y: 18 } : false
+              }
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
             >
@@ -80,7 +93,9 @@ export default function AeroHero2() {
 
             <motion.p
               className="max-w-2xl text-white/90"
-              initial={reduce ? undefined : { opacity: 0, y: 16 }}
+              initial={
+                reduce ? undefined : playHomeIntro ? { opacity: 0, y: 16 } : false
+              }
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.65, ease: [0.2, 0.8, 0.2, 1], delay: 0.08 }}
             >
@@ -91,7 +106,7 @@ export default function AeroHero2() {
 
           <motion.div
             className="flex w-full flex-col gap-8 lg:mt-0 lg:w-auto lg:max-w-md"
-            initial={reduce ? undefined : { opacity: 0, x: 18 }}
+            initial={reduce ? undefined : playHomeIntro ? { opacity: 0, x: 18 } : false}
             animate={reduce ? undefined : { opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1], delay: 0.12 }}
           >
@@ -100,7 +115,9 @@ export default function AeroHero2() {
                 {PATIENT_AVATARS.map((src, i) => (
                   <motion.div
                     key={src}
-                    initial={reduce ? undefined : { opacity: 0, y: 14 }}
+                    initial={
+                      reduce ? undefined : playHomeIntro ? { opacity: 0, y: 14 } : false
+                    }
                     animate={reduce ? undefined : { opacity: 1, y: 0 }}
                     transition={{
                       duration: 0.55,
@@ -128,7 +145,9 @@ export default function AeroHero2() {
 
             <motion.div
               className="flex w-full flex-col gap-4 sm:w-fit"
-              initial={reduce ? undefined : { opacity: 0, y: 18 }}
+              initial={
+                reduce ? undefined : playHomeIntro ? { opacity: 0, y: 18 } : false
+              }
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.65, ease: [0.2, 0.8, 0.2, 1], delay: 0.22 }}
             >

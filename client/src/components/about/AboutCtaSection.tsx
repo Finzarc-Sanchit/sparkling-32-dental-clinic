@@ -1,9 +1,11 @@
 import { Container } from '../ui/Container';
 import { MaterialIcon } from '../ui/MaterialIcon';
 import { buildWhatsAppLink } from '../../utils/whatsapp';
+import { motion, useReducedMotion } from 'framer-motion';
 
 export function AboutCtaSection() {
   const whatsappLink = buildWhatsAppLink();
+  const reduce = useReducedMotion();
 
   return (
     <section className="py-24">
@@ -11,7 +13,13 @@ export function AboutCtaSection() {
         <div className="rounded-2xl bg-[linear-gradient(135deg,_var(--color-primary)_0%,_var(--color-primary-container)_100%)] p-12 md:p-20 text-center relative overflow-hidden text-on-primary">
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
           <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
-          <div className="relative z-10">
+          <motion.div
+            className="relative z-10"
+            initial={reduce ? false : { opacity: 0, y: 14 }}
+            whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+            viewport={reduce ? undefined : { once: true, amount: 0.4 }}
+            transition={reduce ? undefined : { duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
             <h2 className="text-white mb-6">Ready to meet us?</h2>
             <p className="text-primary bg-white/90 inline-block px-4 py-1 rounded-full mb-10">
               Experience world-class dental care
@@ -31,7 +39,7 @@ export function AboutCtaSection() {
                 Book Appointment
               </a>
             </div>
-          </div>
+          </motion.div>
         </div>
       </Container>
     </section>

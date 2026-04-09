@@ -95,12 +95,11 @@ export function NriHeroSection() {
           <div className="rounded-xl overflow-hidden shadow-2xl transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
             <motion.img
               alt="Clinic Interior"
-              className="w-full h-auto object-cover aspect-[4/5]"
+              className="w-full h-auto origin-center object-cover aspect-[4/5] will-change-transform"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8vLT_gi5u_0hrCR71cM-RjRnxBfzYwgjsQzfa5FHnJx_QdKWEQOt3XwdtzcPnfmE_0t4xbrHjKyAVpeljOh5gqGOZFA7jqEJzc15DDOMbc1lI2gQIzoiK0AzsbTwjGhUekzMu3DZiNH9C_CqBQdmEodsfTxQVMT8oUi3fXhuDh3czkddosm0D00NcsZLjjcewjfFACSIKIa5ZUlOZjG5Rh_iSRJ0jRLk7OAjJs_aheY76t8Wzc2UNVoFe2tiWG78vs4OHN7ewjok"
-              initial={reduce ? false : { scale: 1.05, filter: 'blur(6px)' }}
-              whileInView={reduce ? undefined : { scale: 1, filter: 'blur(0px)' }}
-              viewport={reduce ? undefined : { once: true, amount: 0.35 }}
-              transition={reduce ? undefined : { duration: 1.05, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
+              initial={{ scale: 1.06, filter: 'blur(6px)' }}
+              animate={{ scale: 1, filter: 'blur(0px)' }}
+              transition={{ duration: 1.75, ease: [0.33, 1, 0.68, 1], delay: 0.12 }}
             />
           </div>
 
