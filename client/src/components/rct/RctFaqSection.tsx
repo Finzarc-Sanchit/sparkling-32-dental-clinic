@@ -1,5 +1,6 @@
 import { Container } from '../ui/Container'
 import { MaterialIcon } from '../ui/MaterialIcon'
+import { motion, useReducedMotion } from 'framer-motion'
 
 const FAQ = [
   {
@@ -38,11 +39,27 @@ const FAQ = [
 ] as const
 
 export function RctFaqSection() {
+  const reduce = useReducedMotion()
+
   return (
     <section className="py-24 bg-surface-container-lowest">
       <Container className="max-w-3xl">
-        <h2 className="text-on-surface mb-12 text-center">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <motion.h2
+          className="text-on-surface mb-12 text-center"
+          initial={reduce ? false : { opacity: 0, y: 12 }}
+          whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+          viewport={reduce ? undefined : { once: true, amount: 0.6 }}
+          transition={reduce ? undefined : { duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        >
+          Frequently Asked Questions
+        </motion.h2>
+        <motion.div
+          className="space-y-4"
+          initial={reduce ? false : { opacity: 0, y: 12 }}
+          whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+          viewport={reduce ? undefined : { once: true, amount: 0.35 }}
+          transition={reduce ? undefined : { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
+        >
           {FAQ.map((it) => (
             <details
               key={it.q}
@@ -56,7 +73,7 @@ export function RctFaqSection() {
               <div className="p-6 pt-0 text-on-surface-variant border-t border-outline-variant/10">{it.a}</div>
             </details>
           ))}
-        </div>
+        </motion.div>
       </Container>
     </section>
   )

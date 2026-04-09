@@ -1,14 +1,22 @@
 import { Container } from '../ui/Container';
 import { MaterialIcon } from '../ui/MaterialIcon';
 import { buildWhatsAppLink } from '../../utils/whatsapp';
+import { motion, useReducedMotion } from 'framer-motion';
 
 export function UsCtaSection() {
   const whatsappLink = buildWhatsAppLink();
+  const reduce = useReducedMotion();
 
   return (
     <section className="py-20">
       <Container>
-        <div className="rounded-[3rem] bg-tertiary-container text-on-tertiary p-12 md:p-16 text-center shadow-2xl relative overflow-hidden">
+        <motion.div
+          className="rounded-[3rem] bg-tertiary-container text-on-tertiary p-12 md:p-16 text-center shadow-2xl relative overflow-hidden"
+          initial={reduce ? false : { opacity: 0, y: 14 }}
+          whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+          viewport={reduce ? undefined : { once: true, amount: 0.5 }}
+          transition={reduce ? undefined : { duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="absolute inset-0 opacity-10 pointer-events-none">
             <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
               <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
@@ -31,7 +39,7 @@ export function UsCtaSection() {
               WhatsApp Us Now
             </a>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

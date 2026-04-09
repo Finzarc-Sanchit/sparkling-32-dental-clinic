@@ -1,12 +1,21 @@
 import { Container } from '../ui/Container';
 import { MaterialIcon } from '../ui/MaterialIcon';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 export function UsHeroSection() {
+  const reduce = useReducedMotion();
+
   return (
     <section className="relative pt-20 pb-32 overflow-hidden bg-surface">
       <Container className="grid lg:grid-cols-2 gap-16 items-center">
-        <div className="relative z-10">
+        <motion.div
+          className="relative z-10"
+          initial={reduce ? false : { opacity: 0, y: 14 }}
+          whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+          viewport={reduce ? undefined : { once: true, amount: 0.45 }}
+          transition={reduce ? undefined : { duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-container text-on-secondary-fixed font-semibold mb-6">
             <span className="text-lg" aria-hidden="true">
               🇺🇸
@@ -55,16 +64,56 @@ export function UsHeroSection() {
               International Standards
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="relative lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
-          <img
-            alt="Sparkling 32 Dental Clinic"
-            className="w-full h-full object-cover"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdYG-1E5I1UoacDis6LAb67nbewQSGRvtStM-bWb6WR3o4TqKI4oR7v_snSyWVfdzCI2B3m6ipwTuSb5z4yGzvXEmZ05hdzrAJBOW8e-IXJRLTMnPFpYIwAqqV3HBiZgm-3M4nfCXtiET8zbi1J6_i709zyjqwhYVZITu9C4fRoCXJ66eGWx6ZB1mgFRy0BAqAQWD8AnuHN8MJ2DtzQxM8omdUWJGPLw6TZFocNQcRpZG2REYKivkt2BGCWIrOfalJtRN6yIuH3kc"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
-        </div>
+        <motion.div
+          className="relative lg:h-[600px] w-full"
+          style={{ filter: 'drop-shadow(0 28px 32px rgba(0,0,0,0.22))' }}
+          initial={reduce ? false : { opacity: 0, y: 14 }}
+          whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+          viewport={reduce ? undefined : { once: true, amount: 0.35 }}
+          transition={reduce ? undefined : { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
+        >
+          <svg
+            viewBox="0 0 600 700"
+            className="w-full h-full"
+            preserveAspectRatio="xMidYMid slice"
+          >
+            <defs>
+              <clipPath id="heroBlob">
+                <path d="M300,40 
+          C380,20 500,60 550,160 
+          C600,260 560,420 450,520 
+          C340,620 200,640 100,560 
+          C0,480 20,320 80,200 
+          C140,80 220,60 300,40 Z" />
+              </clipPath>
+            </defs>
+
+            <image
+              href="https://lh3.googleusercontent.com/aida-public/AB6AXuCdYG-1E5I1UoacDis6LAb67nbewQSGRvtStM-bWb6WR3o4TqKI4oR7v_snSyWVfdzCI2B3m6ipwTuSb5z4yGzvXEmZ05hdzrAJBOW8e-IXJRLTMnPFpYIwAqqV3HBiZgm-3M4nfCXtiET8zbi1J6_i709zyjqwhYVZITu9C4fRoCXJ66eGWx6ZB1mgFRy0BAqAQWD8AnuHN8MJ2DtzQxM8omdUWJGPLw6TZFocNQcRpZG2REYKivkt2BGCWIrOfalJtRN6yIuH3kc"
+              width="600"
+              height="700"
+              preserveAspectRatio="xMidYMid slice"
+              clipPath="url(#heroBlob)"
+            />
+
+            {/* Gradient overlay */}
+            <rect
+              width="600"
+              height="700"
+              clipPath="url(#heroBlob)"
+              fill="url(#gradientOverlay)"
+            />
+
+            <defs>
+              <linearGradient id="gradientOverlay" x1="0" y1="1" x2="0" y2="0">
+                <stop offset="0%" stopColor="rgba(0,0,0,0.35)" />
+                <stop offset="100%" stopColor="rgba(0,0,0,0)" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </motion.div>
       </Container>
     </section>
   );

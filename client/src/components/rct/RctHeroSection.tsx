@@ -1,72 +1,120 @@
-import { Container } from '../ui/Container'
-import { MaterialIcon } from '../ui/MaterialIcon'
-import { Link } from 'react-router-dom'
+import { Container } from '../ui/Container';
+import { Link } from 'react-router-dom';
+import rootCanalHeroImg from '@/assets/root-canal-hero.webp';
+import { motion, useReducedMotion } from 'framer-motion';
 
-const PHONE_E164 = '+919898968686'
-
-const BADGES = [
-  { icon: 'check_circle', text: 'No Hidden Costs', tone: 'primary' as const },
-  { icon: 'check_circle', text: 'Advanced Techniques', tone: 'primary' as const },
-  { icon: 'check_circle', text: 'Comfortable Procedure', tone: 'primary' as const },
-  { icon: 'star', text: '4.9 Google Rating', tone: 'tertiary' as const, filled: true },
-] as const
 
 export function RctHeroSection() {
+  const reduce = useReducedMotion();
+
   return (
-    <section className="relative overflow-hidden bg-surface py-20 lg:py-32">
+    <section className="relative overflow-hidden bg-primary text-on-primary py-20 lg:py-32 rounded-tl-[8rem] md:rounded-tl-[18rem]">
       <Container className="grid lg:grid-cols-2 gap-12 items-center">
-        <div className="z-10">
-          <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider text-primary bg-primary/10 rounded-full">
+        <motion.div
+          className="z-10"
+          initial={reduce ? false : { opacity: 0, y: 14 }}
+          whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+          viewport={reduce ? undefined : { once: true, amount: 0.45 }}
+          transition={reduce ? undefined : { duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider text-on-primary bg-on-primary/12 rounded-full">
             SPECIALIZED ENDODONTICS
           </span>
-          <h1 className="text-on-surface mb-6">
+          <h1 className="text-on-primary mb-6">
             Painless Root Canal Treatment in Mumbai
           </h1>
-          <p className="text-on-surface-variant mb-10 max-w-xl">
+          <p className="text-on-primary/85 mb-10 max-w-xl">
             Save your natural tooth. Eliminate the pain. Most patients are surprised by how comfortable it is.
           </p>
 
+          <ul className="mb-10 space-y-3 text-on-primary/90">
+            <li className="flex items-center gap-3">
+              <span aria-hidden className="text-on-primary/80">
+                →
+              </span>
+              <span>Comfortable and painless procedures</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <span aria-hidden className="text-on-primary/80">
+                →
+              </span>
+              <span>Use of advanced techniques</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <span aria-hidden className="text-on-primary/80">
+                →
+              </span>
+              <span>Proper diagnosis and long-term results</span>
+            </li>
+          </ul>
+
           <div className="flex flex-wrap gap-4 mb-12">
             <Link
-              className="bg-primary text-on-primary px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:brightness-110 transition-all active:scale-95"
+              className="bg-on-primary text-primary px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:brightness-110 transition-all active:scale-95"
               to="/contact"
             >
               Contact Us
             </Link>
-            <a
-              className="border-2 border-primary text-primary px-8 py-4 rounded-full text-lg font-bold hover:bg-primary hover:text-on-primary transition-all active:scale-95"
-              href={`tel:${PHONE_E164}`}
-            >
-              Call Us
-            </a>
           </div>
 
-          <div className="flex flex-wrap items-center gap-6 text-sm font-medium text-on-surface-variant bg-surface-container-low p-4 rounded-2xl w-fit max-w-full">
-            {BADGES.map((b) => (
-              <div key={b.text} className="flex items-center gap-2">
-                <MaterialIcon
-                  name={b.icon}
-                  filled={Boolean((b as { filled?: boolean }).filled)}
-                  className={`text-lg ${b.tone === 'tertiary' ? 'text-tertiary' : 'text-primary'}`}
-                />
-                {b.text}
-              </div>
-            ))}
-          </div>
-        </div>
+        </motion.div>
 
-        <div className="relative">
+        <motion.div
+          className="relative"
+          initial={reduce ? false : { opacity: 0, y: 14 }}
+          whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+          viewport={reduce ? undefined : { once: true, amount: 0.35 }}
+          transition={reduce ? undefined : { duration: 0.75, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
+        >
           <div className="absolute -top-10 -right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
-          <div className="rounded-3xl overflow-hidden shadow-2xl relative z-10 aspect-[4/5] lg:aspect-square">
-            <img
-              className="w-full h-full object-cover"
-              alt="Clinic interior"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTdcmK97DbJR1lUH3ct2Zp9TfNeEP7Oie-bsV3IQwSxmA7ztIB413O2Hvd7YbBN649iIIRD2y3R9lYv5eWumEBKjIBAlv3DRFfcKhrl3MAsLxGtHR1Yotiqy4yzeK7wnMcLquvAc3A3qQK91HAdGwfFFB5ojoBSOKncTul9_k_g7zljgR5Dzj2M1Cw2-zld1msCwv0mFk3goFeMfg34j1swnWFnNU7Mya4gcrnhRSpxVM1FLkCkrlIrvQmBAzQMYtvF9_XDvL7iDM"
-            />
+          <div
+            className="relative w-full h-full aspect-[4/5] lg:aspect-square"
+            style={{ filter: 'drop-shadow(0 28px 32px rgba(0,0,0,0.2))' }}
+          >
+            <svg
+              viewBox="0 0 600 700"
+              className="w-full h-full transition-transform duration-500 hover:scale-[1.02]"
+              preserveAspectRatio="xMidYMid slice"
+            >
+              <defs>
+                {/* 🔁 REVERSE BLOB SHAPE */}
+                <clipPath id="rctBlob">
+                  <path d="M280,40 
+          C200,20 80,60 40,160 
+          C0,260 40,420 150,520 
+          C260,620 420,640 520,560 
+          C620,480 600,320 540,200 
+          C480,80 360,60 280,40 Z" />
+                </clipPath>
+              </defs>
+
+              <image
+                href={rootCanalHeroImg}
+                width="600"
+                height="700"
+                preserveAspectRatio="xMidYMid slice"
+                clipPath="url(#rctBlob)"
+              />
+
+              {/* subtle overlay (no primary color) */}
+              <rect
+                width="600"
+                height="700"
+                clipPath="url(#rctBlob)"
+                fill="url(#rctOverlay)"
+              />
+
+              <defs>
+                <linearGradient id="rctOverlay" x1="0" y1="1" x2="0" y2="0">
+                  <stop offset="0%" stopColor="rgba(0,0,0,0.3)" />
+                  <stop offset="100%" stopColor="rgba(0,0,0,0)" />
+                </linearGradient>
+              </defs>
+            </svg>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </section>
-  )
+  );
 }
 
