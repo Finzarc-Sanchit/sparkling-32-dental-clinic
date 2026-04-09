@@ -72,33 +72,33 @@ export function RctWhyChooseSection() {
 
             <div className="mt-10 grid grid-cols-1 gap-x-12 gap-y-10 sm:grid-cols-2">
               <div className="relative">
-                <Award className="size-7 text-primary" />
+                <Award className="size-10 text-primary" />
                 <div aria-hidden className="mt-5 h-0.5 w-28 bg-gradient-to-r from-primary/70 to-transparent" />
                 <h3 className="mt-5 text-on-surface">{REASONS[0].title}</h3>
-                <p className="text-on-surface-variant">{REASONS[0].description}</p>
+                <p className="text-on-surface-variant text-base">{REASONS[0].description}</p>
                 <div aria-hidden className="mt-8 h-px w-full bg-outline-variant/25" />
               </div>
 
               <div className="relative">
-                <ShieldCheck className="size-7 text-primary" />
+                <ShieldCheck className="size-10 text-primary" />
                 <div aria-hidden className="mt-5 h-0.5 w-28 bg-gradient-to-r from-primary/70 to-transparent" />
                 <h3 className="mt-5 text-on-surface">{REASONS[1].title}</h3>
-                <p className="text-on-surface-variant">{REASONS[1].description}</p>
+                <p className="text-on-surface-variant text-base">{REASONS[1].description}</p>
                 <div aria-hidden className="mt-8 h-px w-full bg-outline-variant/25" />
               </div>
 
               <div className="relative">
-                <Smile className="size-7 text-primary" />
+                <Smile className="size-10 text-primary" />
                 <div aria-hidden className="mt-5 h-0.5 w-28 bg-gradient-to-r from-primary/70 to-transparent" />
                 <h3 className="mt-5 text-on-surface">{REASONS[2].title}</h3>
-                <p className="text-on-surface-variant">{REASONS[2].description}</p>
+                <p className="text-on-surface-variant text-base">{REASONS[2].description}</p>
               </div>
 
               <div className="relative">
-                <Zap className="size-7 text-primary" />
+                <Zap className="size-10 text-primary" />
                 <div aria-hidden className="mt-5 h-0.5 w-28 bg-gradient-to-r from-primary/70 to-transparent" />
                 <h3 className="mt-5 text-on-surface">{REASONS[3].title}</h3>
-                <p className="text-on-surface-variant">{REASONS[3].description}</p>
+                <p className="text-on-surface-variant text-base">{REASONS[3].description}</p>
               </div>
             </div>
           </div>

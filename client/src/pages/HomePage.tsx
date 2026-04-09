@@ -1,5 +1,6 @@
 import { HeroSection } from '../components/home/HeroSection';
 import { NriSection } from '../components/home/NriSection';
+import { HomeProcessSection } from '../components/home/HomeProcessSection';
 import { PainPointEmpathy } from '../components/home/PainPointEmpathy';
 import { ServicesGrid } from '../components/home/ServicesGrid';
 import { StatsBar } from '../components/home/StatsBar';
@@ -12,6 +13,7 @@ export function HomePage() {
         <HeroSection />
         <StatsBar />
         <PainPointEmpathy />
+        <HomeProcessSection />
         <ServicesGrid />
         <NriSection />
         <TestimonialsSection />

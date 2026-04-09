@@ -433,7 +433,7 @@ export function CardsSpotlightCarousel({
             type="button"
             aria-label="Previous testimonial"
             onClick={goPrev}
-            className="absolute left-3 top-1/2 z-20 -translate-y-1/2 rounded-full border border-outline-variant/30 bg-surface-container-lowest/80 px-3 py-2 text-on-surface shadow-sm backdrop-blur transition-colors hover:bg-surface-container-lowest"
+            className="absolute left-3 top-4 z-20 rounded-full border border-outline-variant/30 bg-surface-container-lowest/80 px-3 py-2 text-on-surface shadow-sm backdrop-blur transition-colors hover:bg-surface-container-lowest md:top-1/2 md:-translate-y-1/2"
           >
             ‹
           </button>
@@ -441,7 +441,7 @@ export function CardsSpotlightCarousel({
             type="button"
             aria-label="Next testimonial"
             onClick={goNext}
-            className="absolute right-3 top-1/2 z-20 -translate-y-1/2 rounded-full border border-outline-variant/30 bg-surface-container-lowest/80 px-3 py-2 text-on-surface shadow-sm backdrop-blur transition-colors hover:bg-surface-container-lowest"
+            className="absolute right-3 top-4 z-20 rounded-full border border-outline-variant/30 bg-surface-container-lowest/80 px-3 py-2 text-on-surface shadow-sm backdrop-blur transition-colors hover:bg-surface-container-lowest md:top-1/2 md:-translate-y-1/2"
           >
             ›
           </button>

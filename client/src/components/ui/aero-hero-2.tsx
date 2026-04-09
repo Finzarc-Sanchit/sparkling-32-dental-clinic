@@ -5,6 +5,10 @@ import { useRef } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import heroBg from '@/assets/benyamin-bohlouli-e7MJLM5VGjY-unsplash.jpg';
 import { Link } from 'react-router-dom';
+import test1 from '@/assets/testimonials/test-1.jpg';
+import test2 from '@/assets/testimonials/test-2.jpg';
+import test3 from '@/assets/testimonials/test-3.jpg';
+import test4 from '@/assets/testimonials/test-4.jpg';
 
 /** Increments on every `AeroHero2` mount; used to skip intro on React 18 Strict Mode’s dev-only remount (even mounts). */
 let homeHeroMountSeq = 0;
@@ -12,10 +16,10 @@ let homeHeroMountSeq = 0;
 const HERO_BG = heroBg;
 
 const PATIENT_AVATARS = [
-  'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=128&h=128&q=80',
-  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=128&h=128&q=80',
-  'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=128&h=128&q=80',
-  'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=128&h=128&q=80',
+  test1,
+  test2,
+  test3,
+  test4,
 ] as const;
 
 export default function AeroHero2() {

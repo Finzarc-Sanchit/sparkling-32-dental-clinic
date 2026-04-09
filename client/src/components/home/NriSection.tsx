@@ -52,14 +52,6 @@ const TREATMENTS: Treatment[] = [
   },
 ];
 
-const STEPS = [
-  { n: 1, title: 'Case Review Online', desc: 'We review your case before you travel' },
-  { n: 2, title: 'Clear Treatment Plan', desc: 'Transparent plan and expectations' },
-  { n: 3, title: 'Schedule in Advance', desc: 'Appointments planned around your trip' },
-  { n: 4, title: 'Efficient Treatment', desc: 'Complete treatment within your stay' },
-  { n: 5, title: 'Follow-up Support', desc: 'Convenient follow-up coordination' },
-] as const;
-
 const WHATSAPP_LINK = buildWhatsAppLink();
 
 export function NriSection() {
@@ -136,27 +128,13 @@ export function NriSection() {
           </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-24">
-          {STEPS.map((s) => (
-            <Reveal key={s.n} variant="slide-up" delay={0.03 * s.n}>
-              <div className="text-center p-6 bg-surface-container-lowest/85 rounded-3xl border border-outline-variant/20 shadow-[0_18px_40px_-32px_rgba(0,0,0,0.55)] backdrop-blur relative">
-                <div className="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
-                  {s.n}
-                </div>
-                <h5 className="font-bold mb-2">{s.title}</h5>
-                <p className="text-on-surface-variant">{s.desc}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 overflow-x-hidden pb-12">
           <div className="min-w-0">
             <Reveal variant="fade" className="mb-5">
-              <h2 className="font-medium">Choose your treatment</h2>
+              <h2 className="text-3xl">Choose your treatment</h2>
             </Reveal>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 items-stretch">
               {TREATMENTS.map((t) => {
                 const isActiveRow = t.id === treatmentId;
                 return (
@@ -166,7 +144,7 @@ export function NriSection() {
                       onClick={() => setTreatmentId(t.id)}
                       className={[
                         'cursor-default',
-                        'w-full rounded-2xl border px-6 py-5 text-left transition-all duration-300 ease-out',
+                        'w-full h-full rounded-2xl border px-6 py-5 text-left transition-all duration-300 ease-out lg:min-h-[92px]',
                         isActiveRow
                           ? 'border-primary bg-primary text-on-primary'
                           : 'border-outline-variant/25 bg-surface-container-lowest/85 text-on-surface hover:bg-surface-container-lowest hover:border-outline-variant/35',

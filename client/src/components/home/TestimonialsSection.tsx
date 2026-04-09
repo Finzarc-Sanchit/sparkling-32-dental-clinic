@@ -2,35 +2,45 @@ import { Container } from '../ui/Container';
 import { MaterialIcon } from '../ui/MaterialIcon';
 import { Reveal } from '../ui/Reveal';
 import { CardsSpotlightCarousel } from '../ui/cards';
+import test1 from '@/assets/testimonials/test-1.jpg';
+import test2 from '@/assets/testimonials/test-2.jpg';
+import test3 from '@/assets/testimonials/test-3.jpg';
+import test4 from '@/assets/testimonials/test-4.jpg';
+import test5 from '@/assets/testimonials/test-5.jpg';
+import test6 from '@/assets/testimonials/test-6.jpg';
+import test7 from '@/assets/testimonials/test-7.jpg';
+import test8 from '@/assets/testimonials/test-8.jpg';
+import test9 from '@/assets/testimonials/test-9.jpg';
+import test10 from '@/assets/testimonials/test-10.jpg';
 
 const ROW_1 = [
   {
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=60',
+    image: test3,
     name: 'Ananya Mehta',
     handle: 'Teeth Whitening · Mumbai',
   },
   {
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&h=200&q=80',
+    image: test4,
     name: 'Neha Sharma',
     handle: 'Veneers · Pune',
   },
   {
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&h=200&q=80',
+    image: test7,
     name: 'Priya Nair',
     handle: 'Dental Implants · Bengaluru',
   },
   {
-    image: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&auto=format&fit=crop&q=60',
+    image: test1,
     name: 'Arjun Verma',
     handle: 'Root Canal · Delhi',
   },
   {
-    image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=200&auto=format&fit=crop&q=60',
+    image: test8,
     name: 'Meera Iyer',
     handle: 'Smile Makeover · Chennai',
   },
   {
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80',
+    image: test2,
     name: 'Rohit Kapoor',
     handle: 'Invisalign · Hyderabad',
   },
@@ -38,27 +48,27 @@ const ROW_1 = [
 
 const ROW_2 = [
   {
-    image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200',
+    image: test5,
     name: 'Vikram Singh',
     handle: 'Full Mouth Rehab · Ahmedabad',
   },
   {
-    image: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop&q=60',
+    image: test8,
     name: 'Kavya Reddy',
     handle: 'Dental Implants · Visakhapatnam',
   },
   {
-    image: 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=200&auto=format&fit=crop&q=60',
+    image: test6,
     name: 'Siddharth Jain',
     handle: 'Veneers · Jaipur',
   },
   {
-    image: 'https://images.unsplash.com/photo-1552058544-f2b08422138a?w=200&auto=format&fit=crop&q=60',
+    image: test9,
     name: 'Ishita Das',
     handle: 'Root Canal · Kolkata',
   },
   {
-    image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=200&auto=format&fit=crop&q=60',
+    image: test10,
     name: 'Aditi Kulkarni',
     handle: 'Whitening · Nashik',
   },
